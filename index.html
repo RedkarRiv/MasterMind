@@ -10,12 +10,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/styles.css">
-    <title>MasterMind - by RedkarRiv</title>
+    <title>MasterMind - RedkarRiv</title>
 </head>
 
 <body>
-    <!-- MAIN BACKGROUND -->
-    <div id="mainBackground">
+    <div class="mainBody">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <!-- LOGO NAVBAR -->
@@ -35,19 +34,24 @@
                 </div>
             </div>
         </nav>
-        <!-- BUTTONS START AND HOW TO PLAY -->
-        <div class="row contenedorOpciones">
-            <!-- BUTTON START -->
-            <div class="col-10 col-md-4 col-lg-5 col-xl-3 opcion">
-                <div class="start textopcion">EMPEZAR PARTIDA</div>
-            </div>
-            <!-- BUTTON HOW TO PLAY -->
-            <div class="col-10 col-md-4 col-lg-5 col-xl-3 opcion">
-                <div class="howtoplay textopcion">CÓMO SE JUEGA</div>
+        <!-- MAIN BACKGROUND -->
+        <div id="mainBackground">
+            <!-- BUTTONS START AND HOW TO PLAY -->
+            <div class="row containerButtons">
+                <!-- BUTTON START -->
+                <div class="col-10 col-md-4 col-lg-5 col-xl-3 button">
+                    <div class="start textButton">
+                        <p class="textContainer">EMPEZAR PARTIDA</p>
+                    </div>
+                </div>
+                <!-- BUTTON HOW TO PLAY -->
+                <div class="col-10 col-md-4 col-lg-5 col-xl-3 button">
+                    <div class="howtoplay textButton">
+                        <p class="textContainer">CÓMO SE JUEGA</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-
         <!-- MAIN SCRIP -->
         <script src="./js/main.js"></script>
         <!-- BOOTSTRAP SCRIPT -->
