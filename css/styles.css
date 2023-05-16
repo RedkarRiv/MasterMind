@@ -18,6 +18,11 @@ body {
     width: 10em;
 }
 
+.sectionsBar {
+    padding-right: 7.5%;
+
+}
+
 .containerButtons {
     display: flex;
     align-items: center;
