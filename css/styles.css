@@ -24,8 +24,8 @@ body {
     justify-content: space-around;
     height: 100vh;
     width: 100vw;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .button {
@@ -42,10 +42,9 @@ body {
 .textButton {
     background-color: grey;
     background-image: url(../img/metalSpotsTexture2.jpg);
-    background-position: center;
     background-size: cover;
     height: 5em;
-    width: 20em;
+    width: 100%;
     border-radius: 10%/10%;
     display: flex;
     align-items: center;
@@ -57,9 +56,11 @@ body {
     color: white;
     text-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.5);
     user-select: none;
+    text-align: center;
 }
 
 .textButton:hover {
     transform: scale(1.1);
     background-color: rgb(180, 179, 179);
+    box-shadow: 0em 0em 0.3em 0.3em #84BD00;
 }
