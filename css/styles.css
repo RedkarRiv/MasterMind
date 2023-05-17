@@ -138,7 +138,7 @@ body {
 
 @media (max-width: 768px) {
     .aboutTextContainer {
-        margin-top: 50vh;
+        margin-top: 20vh;
         background-color: rgba(128, 128, 128, 0.566);
         width: 100%;
         height: auto;
