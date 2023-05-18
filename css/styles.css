@@ -27,6 +27,7 @@ body {
         background-position: center;
         display: flex;
         justify-content: center;
+        padding-top: 15%;
     }
 }
 
