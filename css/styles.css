@@ -18,6 +18,8 @@ body {
     justify-content: center;
 }
 
+
+
 @media (max-width: 768px) {
     #mainBackground {
         width: 100vw;
@@ -37,6 +39,8 @@ body {
     background-size: cover;
     width: 10em;
 }
+
+
 
 .containerButtons {
     display: flex;
@@ -68,10 +72,10 @@ body {
 }
 
 .textContainer:hover {
-        color: inherit;
-        text-decoration: none;
-    
-    }
+    color: inherit;
+    text-decoration: none;
+
+}
 
 
 .textButton {
@@ -188,4 +192,90 @@ li {
 
 .linkContainer {
     width: 100%;
+}
+
+/* CSS MASTERMIND */
+
+
+#mastermindBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mastermindBoard {
+    margin-top: 3em;
+    width: 35em;
+    height: 50em;
+    background-image: url(../img/woodTexture.jpg);
+    background-repeat: inherit;
+    border-radius: 2em;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.fila {
+    /* border: blue solid 0.16em; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+
+.filaCierre {
+    width: 100%;
+    height: 5%;
+    /* border: green solid 0.16em; */
+}
+
+.celdaTry {
+    /* border: red solid 0.16em; */
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.celdaMargen {
+    /* border: green solid 0.16em; */
+    height: 100%;
+    width: 20%;
+}
+
+.celdaPuntuacion {
+    /* border: yellow solid 0.16em; */
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tirada {
+    border-radius: 50%;
+    background-color: black;
+    height: 50%;
+    width: 50%;
+}
+
+.puntuacion {
+    /* border: white solid 0.16em; */
+    height: 60%;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.pto {
+    border-radius: 50%;
+    background-color: black;
+    height: 0.8em;
+    width: 0.8em;
 }
