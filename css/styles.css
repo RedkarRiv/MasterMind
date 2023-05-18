@@ -101,7 +101,7 @@ body {
     background-color: black;
     background-image: url(../img/logo_transBack_greenText_sm.png);
     background-repeat: no-repeat;
-    background-position: center 5%;
+    background-position: center 10%;
     background-size: 10%;
     overflow: hidden;
     display: flex;
@@ -115,7 +115,7 @@ body {
         background-image: url(../img/logo_transBack_greenText.png);
         background-color: black;
         background-repeat: no-repeat;
-        background-position: center -0.2%;
+        background-position: center 10%;
         background-size: 40%;
         overflow: hidden;
         display: flex;
@@ -138,7 +138,7 @@ body {
 
 @media (max-width: 768px) {
     .aboutTextContainer {
-        margin-top: 20vh;
+        margin-top: 25em;
         background-color: rgba(128, 128, 128, 0.566);
         width: 100%;
         height: auto;
