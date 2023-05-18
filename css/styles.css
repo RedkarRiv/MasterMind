@@ -63,8 +63,16 @@ body {
 
 .textContainer {
     margin: 0;
-
+    color: inherit;
+    text-decoration: none;
 }
+
+.textContainer:hover {
+        color: inherit;
+        text-decoration: none;
+    
+    }
+
 
 .textButton {
     background-color: grey;
@@ -84,14 +92,15 @@ body {
     text-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.5);
     user-select: none;
     text-align: center;
+
 }
+
+
 
 .textButton:hover {
     transform: scale(1.1);
     background-color: rgb(180, 179, 179);
     box-shadow: 0em 0em 0.3em 0.3em #84BD00;
-    color: inherit;
-    text-decoration: none;
 }
 
 /* CSS PAGE: ABOUT */
@@ -116,7 +125,7 @@ body {
         background-image: url(../img/logo_transBack_greenText.png);
         background-color: black;
         background-repeat: no-repeat;
-        background-position: center 10%;
+        background-position: center 4%;
         background-size: 40%;
         overflow: hidden;
         display: flex;
@@ -139,12 +148,12 @@ body {
 
 @media (max-width: 768px) {
     .aboutTextContainer {
-        margin-top: 25em;
+        padding-top: 30%;
         background-color: rgba(128, 128, 128, 0.566);
         width: 100%;
         height: auto;
         display: inline-block;
-        font-size: 50%;
+        font-size: auto;
     }
 
     ol {
@@ -154,6 +163,7 @@ body {
 
 .aboutTitle {
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     width: 100%;
