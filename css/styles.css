@@ -394,15 +394,16 @@ li {
 .filaBlock {
     background-image: url(../img/blockedMove.jpg);
     width: 60%;
+    height: 90%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 -1.2em;
-    box-shadow: 0.1em 0.1em #282828;
+    box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
 
 }
 
 .tiradaBlock {
     background-color: transparent;
     user-select: none;
-    cursor: none;
+    cursor: default;
 }
