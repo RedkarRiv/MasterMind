@@ -140,6 +140,8 @@ body {
 
 .aboutTextContainer {
     margin-top: 30vh;
+    margin-left:10%;
+    margin-right: 10%;
     background-color: rgba(128, 128, 128, 0.566);
     width: auto;
     height: auto;
@@ -208,14 +210,53 @@ li {
 
 .mastermindBoard {
     margin-top: 3em;
-    width: 35em;
-    height: 50em;
+    width: 25em;
+    height: 35em;
     background-image: url(../img/woodTexture.jpg);
     background-repeat: inherit;
     border-radius: 2em;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+}
+
+@media (max-width: 768px) {
+.mastermindBoard {
+    margin-top: 3em;
+    width: 80%;
+    height: 80%;
+    background-image: url(../img/woodTexture.jpg);
+    background-repeat: inherit;
+    border-radius: 2em;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+}
+@media (max-width: 768px) {
+.tirada {
+    border-radius: 50%;
+    background-color: black;
+    height: 1.2em;
+    width: 1.2m;
+}
+}
+@media (max-width: 768px) {
+.pto {
+    border-radius: 50%;
+    background-color: black;
+    height: 0.5em;
+    width: 0.5em;
+}
+}
+
+@media (max-width: 768px) {
+.Solucion {
+    border-radius: 50%;
+    background-color: black;
+    height: 0.8em;
+    width: 0.8em;
+}
 }
 
 .fila {
@@ -229,6 +270,13 @@ li {
     width: 100%;
     height: 5%;
     /* border: green solid 0.16em; */
+}
+
+.filaSolucion {
+    /* border: blue solid 0.16em; */
+    width: 100%;
+    height: 8%;
+    display: flex;
 }
 
 .celdaTry {
@@ -258,8 +306,15 @@ li {
 .tirada {
     border-radius: 50%;
     background-color: black;
-    height: 50%;
-    width: 50%;
+    height: 1.8em;
+    width: 1.8em;
+}
+
+.Solucion {
+    border-radius: 50%;
+    background-color: black;
+    height: 1.8em;
+    width: 1.8em;
 }
 
 .puntuacion {
