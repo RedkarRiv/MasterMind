@@ -450,6 +450,7 @@ li {
     height: auto;
     font-size: 300%;
     font-weight: bold;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -518,4 +519,110 @@ li {
         cursor: pointer;
         user-select: none;
     }
+}
+
+
+.inputLvl {
+    margin-top: 2vh;
+    width: 5vw;
+    height: 2.5vh;
+    background-color: rgb(153, 142, 142);
+    border-radius: 1em;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+@media (max-width: 768px) {
+    .inputLvl {
+        margin-top: 3vh;
+        width: 20vw;
+        height: 5vh;
+        background-color: rgb(153, 142, 142);
+        border-radius: 1em;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.prompLevelSelect {
+    width: 30vw;
+    color: black;
+    text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+        0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+    height: auto;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+}
+
+@media (max-width: 768px) {
+    .prompLevelSelect {
+        width: 70vw;
+        color: black;
+        text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+            0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+        height: auto;
+        font-size: 200%;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+
+    }
+}
+
+
+/* CSS PAGE: COLOR SELECT */
+
+.selected {
+    margin-top: 3vh;
+    width: 24vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.selectedColor {
+    width: 20%;
+    height: 80%;
+    background-color: white;
+    border-radius: 0.8em;
+}
+
+#pickerColor {
+    padding: 0;
+    margin-top: 2em;
+    width: 5vw;
+    height: 5vh;
+    border-radius: 0.8em;
+    border: #84BD00 solid 0.20em;
+}
+
+.prompColorSelect {
+    width: 30vw;
+    color: black;
+    text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+        0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+    height: auto;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+
 }
