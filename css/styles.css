@@ -310,19 +310,19 @@ li {
     height: 100%;
     width: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .botonHUB {
     background-color: rgb(85, 129, 186);
-    color: black;
+    color: white;
     text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
     box-shadow: 0.2em 0.2em #282828;
     font-size: 50%;
     width: 80%;
-    height: 40%;
+    height: 60%;
     border-radius: 1em;
     display: flex;
     justify-content: center;
@@ -346,6 +346,16 @@ li {
     height: 2em;
     width: 2em;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .tirada {
+        border-radius: 50%;
+        background-color: black;
+        height: 1.5em;
+        width: 2em;
+        cursor: pointer;
+    }
 }
 
 .Solucion {
@@ -594,12 +604,28 @@ li {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+
+    .selected {
+        margin-top: 3vh;
+        width: 60vw;
+        height: 10vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
 .selectedColor {
     width: 20%;
     height: 80%;
     background-color: white;
     border-radius: 0.8em;
 }
+
+
+
+
 
 #pickerColor {
     padding: 0;
@@ -608,6 +634,17 @@ li {
     height: 5vh;
     border-radius: 0.8em;
     border: #84BD00 solid 0.20em;
+}
+
+@media (max-width: 768px) {
+    #pickerColor {
+        padding: 0;
+        margin-top: 2em;
+        width: 30vw;
+        height: 6vh;
+        border-radius: 0.8em;
+        border: #84BD00 solid 0.20em;
+    }
 }
 
 .prompColorSelect {
@@ -623,6 +660,22 @@ li {
     align-items: center;
     justify-content: center;
     user-select: none;
+}
 
+@media (max-width: 768px) {
 
+    .prompColorSelect {
+        width: 30vw;
+        color: black;
+        text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+            0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+        height: auto;
+        font-size: 150%;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
 }
