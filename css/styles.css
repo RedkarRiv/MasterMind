@@ -617,6 +617,7 @@ li {
 }
 
 .selectedColor {
+    MARGIN: 1EM;
     width: 20%;
     height: 80%;
     background-color: white;
