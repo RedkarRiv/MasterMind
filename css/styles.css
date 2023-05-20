@@ -210,8 +210,8 @@ li {
 
 .mastermindBoard {
     margin-top: 3em;
-    width: 25em;
-    height: 35em;
+    width: 30em;
+    height: 45em;
     background-image: url(../img/woodTexture.jpg);
     background-repeat: inherit;
     border-radius: 2em;
@@ -343,16 +343,16 @@ li {
 .tirada {
     border-radius: 50%;
     background-color: black;
-    height: 1.8em;
-    width: 1.8em;
+    height: 2em;
+    width: 2em;
     cursor: pointer;
 }
 
 .Solucion {
     border-radius: 50%;
     background-color: black;
-    height: 1.8em;
-    width: 1.8em;
+    height: 2em;
+    width: 2em;
 }
 
 .puntuacion {
@@ -406,4 +406,116 @@ li {
     background-color: transparent;
     user-select: none;
     cursor: default;
+}
+
+/* CSS PAGE: PLAYERSELECT */
+
+.mainPlayerSelect {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logoBackground {
+    background-image: url(../img/logo_transBack_greenText.png);
+    width: 20em;
+    height: 15em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 8vh;
+}
+
+/* @media (max-width: 768px) {
+    .logoBackground {
+        background-image: url(../img/logo_transBack_greenText.png);
+        width: 20em;
+        height: 15em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 10%;
+    }
+} */
+
+.prompPlayerSelect {
+    width: 30vw;
+    color: black;
+    text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+        0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+    height: auto;
+    font-size: 300%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+}
+
+@media (max-width: 768px) {
+    .prompPlayerSelect {
+        width: 70vw;
+        color: black;
+        text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
+            0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
+        height: auto;
+        font-size: 150%;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+
+    }
+}
+
+#inputName {
+    margin-top: 3vh;
+    width: 10vw;
+    height: 3vh;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 0.3em;
+}
+
+@media (max-width: 768px) {
+    #inputName {
+        margin-top: 3vh;
+        width: 60vw;
+        height: 5vh;
+        background-color: aliceblue;
+        text-align: center;
+        border-radius: 0.3em;
+    }
+}
+
+#sendName {
+    margin-top: 2vh;
+    width: 5vw;
+    height: 2.5vh;
+    background-color: rgb(153, 142, 142);
+    border-radius: 1em;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    #sendName {
+        margin-top: 3vh;
+        width: 20vw;
+        height: 5vh;
+        background-color: rgb(153, 142, 142);
+        border-radius: 1em;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
 }
