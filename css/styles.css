@@ -282,6 +282,7 @@ li {
     text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
         0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
     width: 100%;
+    font-size: 150%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -289,6 +290,24 @@ li {
     font-weight: bold;
     user-select: none;
 }
+
+@media (max-width: 768px) {
+
+    .numeroTirada {
+        color: #84BD00;
+        text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
+            0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+        width: 100%;
+        font-size: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        user-select: none;
+    }
+}
+
 
 .botonComprobacion {
     background-color: grey;
@@ -342,10 +361,13 @@ li {
 
 .tirada {
     border-radius: 50%;
-    background-color: black;
+    background: linear-gradient(119deg, rgba(87, 89, 89, 0.138) 0%, rgba(66, 68, 68, 0.269) 18%, rgba(4, 4, 4, 0.817) 100%);
+    background-color: rgb(0, 0, 0);
     height: 2em;
     width: 2em;
     cursor: pointer;
+    border: 0.16em inset grey;
+
 }
 
 @media (max-width: 768px) {
@@ -363,6 +385,7 @@ li {
     background-color: black;
     height: 2em;
     width: 2em;
+    border: outset 0.16em #84BD00;
 }
 
 .puntuacion {
@@ -381,6 +404,8 @@ li {
     background-color: black;
     height: 0.8em;
     width: 0.8em;
+    border: 0.016em inset grey;
+
 }
 
 .tiradaActiva {
@@ -415,6 +440,9 @@ li {
     background-color: transparent;
     user-select: none;
     cursor: default;
+    background: transparent;
+    border: transparent;
+
 }
 
 /* CSS PAGE: PLAYERSELECT */
@@ -439,17 +467,6 @@ li {
     margin-top: 8vh;
 }
 
-/* @media (max-width: 768px) {
-    .logoBackground {
-        background-image: url(../img/logo_transBack_greenText.png);
-        width: 20em;
-        height: 15em;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-top: 10%;
-    }
-} */
 
 .prompPlayerSelect {
     width: 30vw;
@@ -505,12 +522,16 @@ li {
 }
 
 #sendName {
-    margin-top: 2vh;
-    width: 5vw;
-    height: 2.5vh;
+    margin-top: 3vh;
+    width: 8vw;
+    height: 4vh;
     background-color: rgb(153, 142, 142);
+    color: white;
     border-radius: 1em;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
@@ -530,14 +551,22 @@ li {
     }
 }
 
+.inputLink {
+    margin-top: 2vh;
+
+}
+
 
 .inputLvl {
-    margin-top: 2vh;
-    width: 5vw;
-    height: 2.5vh;
+    width: 8vw;
+    height: 4vh;
     background-color: rgb(153, 142, 142);
+    color: white;
     border-radius: 1em;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
@@ -547,8 +576,8 @@ li {
 @media (max-width: 768px) {
     .inputLvl {
         margin-top: 3vh;
-        width: 20vw;
-        height: 5vh;
+        width: 25vw;
+        height: 7vh;
         background-color: rgb(153, 142, 142);
         border-radius: 1em;
         text-align: center;
@@ -558,8 +587,14 @@ li {
     }
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
 .prompLevelSelect {
-    width: 30vw;
+    width: 50vw;
     color: black;
     text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
         0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
@@ -576,12 +611,12 @@ li {
 
 @media (max-width: 768px) {
     .prompLevelSelect {
-        width: 70vw;
+        width: 80vw;
         color: black;
         text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
             0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
         height: auto;
-        font-size: 200%;
+        font-size: 150%;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -622,6 +657,16 @@ li {
     background-color: white;
     border-radius: 0.8em;
 }
+
+.selectedColor.selectedC {
+    MARGIN: 0.32em;
+    width: 20%;
+    height: 80%;
+    background-color: white;
+    border-radius: 0.8em;
+    border: solid 0.5em #84BD00;
+}
+
 
 
 

@@ -4,6 +4,20 @@ let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let colorMode;
 let colorCounter = 1;
 
+
+// COLOR SELECTED REMARKED
+
+const colorSelections = document.querySelectorAll('.selectedColor');
+
+colorSelections.forEach((colorSelection) => {
+    colorSelection.addEventListener('click', () => {
+        colorSelections.forEach((colorSel) => {
+            colorSel.classList.remove('selectedC');
+        });
+        colorSelection.classList.add('selectedC');
+    });
+});
+
 // COLORS SESSIONSTORAGE SAVE COUNTER
 
 switch (lvlMode) {
