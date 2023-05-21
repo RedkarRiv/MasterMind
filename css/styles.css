@@ -386,7 +386,16 @@ li {
     width: 2em;
     cursor: pointer;
     border: 0.16em inset grey;
+}
 
+.tirada1 {
+    border-radius: 50%;
+    background: linear-gradient(119deg, rgba(87, 89, 89, 0.106) 0%, rgba(66, 68, 68, 0.308) 18%, rgba(4, 4, 4, 0.571) 100%);
+    background-color: rgb(0, 0, 0);
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+    border: 0.16em inset grey;
 }
 
 @media (max-width: 768px) {

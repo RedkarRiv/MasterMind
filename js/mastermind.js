@@ -75,15 +75,14 @@ elements.forEach((element) => {
 });
 
 // PLAYER MOVE SELECTOR
-
 let currentIndex = 0;
+let resultadoArray = [];
 
-const jugada = document.querySelectorAll(".tirada");
+const jugada = document.querySelectorAll(".tirada1");
 
-jugada.forEach((element) => {
+jugada.forEach((element, index) => {
     element.addEventListener("click", (event) => {
         const posicion = currentIndex % arrayCode.length;
-
         currentIndex--;
 
         if (currentIndex < 0) {
@@ -91,5 +90,49 @@ jugada.forEach((element) => {
         }
 
         element.style.backgroundColor = arrayCode[posicion];
+        resultadoArray[index] = arrayCode[posicion];
+        posicion1 = resultadoArray[0];
+        posicion2 = resultadoArray[1];
+        posicion3 = resultadoArray[2];
+        posicion4 = resultadoArray[3];
+
+        console.log("La posicion1 es " + posicion1);
+        console.log("La posicion2 es " + posicion2);
+        console.log("La posicion3 es " + posicion3);
+        console.log("La posicion4 es " + posicion4);
+        resultado = resultadoArray.join("")
+        console.log("El result es: " + resultado);
     });
 });
+
+// CHECKING MOVE PLAYER
+
+const comprobarDiv = document.getElementById("comprobacion1");
+
+comprobarDiv.addEventListener("click", comprobacionTirada);
+
+function comprobacionTirada() {
+    if (resultado === winnerCode) {
+        alert("YOU WIN!!");
+    } else {
+        alert("YOU LOSE");
+    }
+}
+
+//             elemento.style.backgroundColor = "red";
+//             elemento.style.backgroundColor = "white";
+//         }
+//     });
+//
+
+// console.log("el codigo1 ganador es:" + Code1);
+// console.log("el codigo2 ganador es:" + Code2);
+// console.log("el codigo3 ganador es:" + Code3);
+// console.log("el codigo4 ganador es:" + Code4);
+// console.log("el codigo ganador es:" + winnerCode);
+
+// console.log("el codigo1 jugado es:" + arrayCode[0]);
+// console.log("el codigo2 jugado es:" + arrayCode[1]);
+// console.log("el codigo3 jugado es:" + arrayCode[2]);
+// console.log("el codigo4 jugado es:" + arrayCode[3]);
+// console.log("el codigo jugado es:" + result);
