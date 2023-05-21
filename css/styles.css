@@ -374,8 +374,8 @@ li {
     .tirada {
         border-radius: 50%;
         background-color: black;
-        height: 1.3em;
-        width: 1.3em;
+        height: 2em;
+        width: 2em;
         cursor: pointer;
         padding: 0.1em;
     }
