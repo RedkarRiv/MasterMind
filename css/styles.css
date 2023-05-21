@@ -402,10 +402,12 @@ li {
 
 .Solucion {
     border-radius: 50%;
+    background: linear-gradient(119deg, rgba(87, 89, 89, 0.138) 0%, rgba(66, 68, 68, 0.269) 18%, rgba(4, 4, 4, 0.817) 100%);
+
     background-color: black;
     height: 2em;
     width: 2em;
-    border: outset 0.16em #84BD00;
+    border: solid 0.08em #161616;
 }
 
 .puntuacion {

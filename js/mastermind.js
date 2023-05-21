@@ -10,7 +10,6 @@ let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let jugador = sessionStorage.getItem("usuario");
 const arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
 
-
 console.log(A);
 console.log(B);
 console.log(C);
@@ -40,9 +39,6 @@ const Code3 = secretCode[2].toString();
 const Code4 = secretCode[3].toString();
 const winnerCode = Code1 + Code2 + Code3 + Code4;
 
-
-
-
 console.log(Code1);
 console.log(Code2);
 console.log(Code3);
@@ -60,3 +56,40 @@ codeWin1.style.backgroundColor = Code1;
 codeWin2.style.backgroundColor = Code2;
 codeWin3.style.backgroundColor = Code3;
 codeWin4.style.backgroundColor = Code4;
+
+// CONTEXTUAL MENU BLOCKER
+
+
+const mastermindBoard = document.querySelector("#mastermindBackground");
+
+mastermindBoard.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+});
+
+const elements = mastermindBoard.querySelectorAll("*");
+
+elements.forEach((element) => {
+    element.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    });
+});
+
+// PLAYER MOVE SELECTOR
+
+let currentIndex = 0;
+
+const jugada = document.querySelectorAll(".tirada");
+
+jugada.forEach((element) => {
+    element.addEventListener("click", (event) => {
+        const posicion = currentIndex % arrayCode.length;
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = arrayCode.length - 1;
+        }
+
+        element.style.backgroundColor = arrayCode[posicion];
+    });
+});
