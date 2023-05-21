@@ -409,7 +409,6 @@ li {
     background-repeat: no-repeat;
     background-position: 0 -1.2em;
     box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
-
 }
 
 .tiradaBlock {
@@ -617,7 +616,7 @@ li {
 }
 
 .selectedColor {
-    MARGIN: 1EM;
+    MARGIN: 0.32em;
     width: 20%;
     height: 80%;
     background-color: white;

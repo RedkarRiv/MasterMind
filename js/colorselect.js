@@ -2,6 +2,9 @@ const colorPicked = document.querySelector("#pickerColor");
 const selectedColors = document.querySelectorAll(".selectedColor");
 let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let colorMode;
+let colorCounter = 1;
+
+// COLORS SESSIONSTORAGE SAVE COUNTER
 
 switch (lvlMode) {
     case "easy":
@@ -14,13 +17,22 @@ switch (lvlMode) {
         colorMode = 6;
         break;
     default:
-        colorMode = 4; // Valor por defecto cuando no se encuentra una dificultad válida
+        colorMode = 4;
         break;
 }
 
-let colorCounter = 1;
-console.log(colorMode);
-console.log(colorCounter);
+// COLORS SESSIONSTORAGE SAVE
+
+const colorSave = (colorValue) => {
+    const colorKey = `ColorSelected${colorCounter}`;
+    sessionStorage.setItem(colorKey, colorValue);
+    colorCounter++;
+    if (colorCounter > colorMode) {
+        colorCounter = 1;
+    }
+};
+
+// SET AND DISPLAY FOR SELECTED COLOR PICKER
 
 selectedColors.forEach((selectedColor) => {
     selectedColor.addEventListener("click", () => {
@@ -34,16 +46,6 @@ selectedColors.forEach((selectedColor) => {
         };
     });
 });
-
-const colorSave = (colorValue) => {
-    const colorKey = `ColorSelected${colorCounter}`;
-    sessionStorage.setItem(colorKey, colorValue);
-    colorCounter++;
-    if (colorCounter > colorMode) {
-        colorCounter = 1;
-    }
-};
-
 
 
 
