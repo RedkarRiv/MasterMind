@@ -18,7 +18,7 @@
     <body>
         <div class="mainAbout container-fluid p-0">
             <!-- NAVBAR -->
-            <nav class="navbar fixed-top navbar-expand-lg navba r-dark bg-dark p-1">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-1">
                 <div class="container-fluid">
                     <!-- LOGO NAVBAR -->
                     <a class="navbar-brand" href="../index.html">
@@ -46,7 +46,8 @@
                 </div>
             </nav>
             <!--ABOUT BACKGROUND -->
-            <div id="aboutBackground" class="container-fluid">
+            <div id="aboutBackground" class="container-fluid d-flex flex-column">
+                <div class="logoBackground"></div>
                 <!-- DESCRIPTION ABOUT -->
                 <div class="aboutTextContainer d-flex flex-column align-items-start justify-content-center p-1">
                     <div class="aboutTitle">CÓMO SE JUEGA A MASTERMIND</div>
@@ -72,7 +73,7 @@
                             pensamiento estratégico y la toma de decisiones basada en las pistas proporcionadas.</p>
 
 
-                        <h2 class="titleRules"  id="reglas">Reglas del juego</h2>
+                        <h2 class="titleRules" id="reglas">Reglas del juego</h2>
                         <ol>
                             <li>El juego consiste en adivinar un código secreto creado por la CPU (computadora).</li>
                             <li>El código secreto está compuesto por una combinación de colores.</li>
@@ -85,7 +86,7 @@
                             <li>El objetivo es adivinar el código secreto en el menor número de intentos posibles.</li>
                         </ol>
 
-                        <h2 class="titleRules"  id="modos">Modos de juego</h2>
+                        <h2 class="titleRules" id="modos">Modos de juego</h2>
                         <ul>
                             <li><strong>Fácil:</strong> Se seleccionan 4 colores para crear el código secreto, pudiendo
                                 repetirse. Se permiten 10 tiradas para adivinar el código.</li>
@@ -95,7 +96,7 @@
                                 pudiendo repetirse. Se permiten 6 tiradas para adivinar el código.</li>
                         </ul>
 
-                        <h2 class="titleRules"  id="final">Final de partida</h2>
+                        <h2 class="titleRules" id="final">Final de partida</h2>
                         <p>La partida puede terminar de las siguientes formas:</p>
                         <ol>
                             <li>Adivinar el código secreto en los intentos disponibles: Si se logra descubrir el código
@@ -105,7 +106,7 @@
                             <li>Agotar los intentos y reiniciar: Si se gastan todos los intentos sin haber adivinado el
                                 código, el jugador puede reiniciar la partida para intentarlo de nuevo.</li>
                         </ol>
-                        <h2 class="titleRules"  id="ejemplo">Ejemplo de partida</h2>
+                        <h2 class="titleRules" id="ejemplo">Ejemplo de partida</h2>
                         <p>Supongamos que en el modo fácil se seleccionan los siguientes colores para el código secreto:
                             Rojo, Verde, Amarillo y Azul. Y el jugador realiza las siguientes tiradas:</p>
                         <ul>
@@ -117,7 +118,7 @@
                                 correctos y todos están en la posición correcta. El jugador adivina el código y gana la
                                 partida.</li>
                         </ul>
-                        <h2 class="titleRules"  id="estrategias">Estrategias de juego</h2>
+                        <h2 class="titleRules" id="estrategias">Estrategias de juego</h2>
                         <p>A continuación, se presentan algunas estrategias que puedes aplicar durante el juego:</p>
                         <ol>
                             <li><strong>Estrategia de búsqueda sistemática:</strong> Explora diferentes combinaciones de
@@ -137,7 +138,7 @@
                     </div>
 
 
-                    <div class="videoTutorialMastermind">
+                    <div class="videoTutorialMastermind m-2">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/dMHxyulGrEk"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
