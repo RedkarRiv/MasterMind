@@ -193,6 +193,10 @@ li {
     width: 100%;
 }
 
+.linkContainer2 {
+    width: 20%;
+}
+
 #menuRules {
     width: 100%;
     height: auto;
@@ -359,8 +363,8 @@ li {
     text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
     box-shadow: 0.2em 0.2em #282828;
     font-size: 50%;
-    width: 80%;
-    height: 60%;
+    width: 300%;
+    height: 80%;
     border-radius: 1em;
     display: flex;
     justify-content: center;

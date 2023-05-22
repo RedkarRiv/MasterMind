@@ -39,12 +39,6 @@ const Code3 = secretCode[2].toString();
 const Code4 = secretCode[3].toString();
 const winnerCode = Code1 + Code2 + Code3 + Code4;
 
-console.log(Code1);
-console.log(Code2);
-console.log(Code3);
-console.log(Code4);
-console.log(winnerCode);
-
 // WINNER CODE SHOW
 
 const codeWin1 = document.querySelector("#winCode1");
@@ -102,20 +96,65 @@ jugada.forEach((element, index) => {
         console.log("La posicion4 es " + posicion4);
         resultado = resultadoArray.join("")
         console.log("El result es: " + resultado);
+        console.log("La codewin1 es " + Code1);
+        console.log("La codewin2 es " + Code2);
+        console.log("La codewin3 es " + Code3);
+        console.log("La codewin4 es " + Code4);
+        resultado = resultadoArray.join("")
+        console.log("El result es: " + resultado);
     });
 });
 
 // CHECKING MOVE PLAYER
-
 const comprobarDiv = document.getElementById("comprobacion1");
+const elemento1 = document.getElementById("puntuacion11")
+const elemento2 = document.getElementById("puntuacion12")
+const elemento3 = document.getElementById("puntuacion13")
+const elemento4 = document.getElementById("puntuacion14")
 
 comprobarDiv.addEventListener("click", comprobacionTirada);
 
 function comprobacionTirada() {
+    // Asegúrate de tener los valores correctos en las variables posicion1, posicion2, posicion3, posicion4 antes de la comparación
     if (resultado === winnerCode) {
         alert("YOU WIN!!");
     } else {
-        alert("YOU LOSE");
+        if (posicion1 == Code1) {
+            elemento1.style.backgroundColor = "red";
+        } else if (winnerCode.includes(posicion1)) {
+            elemento1.style.backgroundColor = "white";
+        } else {
+            elemento1.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+        }
+
+
+        if (posicion2 == Code2) {
+            elemento2.style.backgroundColor = "red";
+        } else if (winnerCode.includes(posicion2)) {
+            elemento2.style.backgroundColor = "white";
+        } else {
+            elemento2.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+        }
+
+
+        if (posicion3 == Code3) {
+            elemento3.style.backgroundColor = "red";
+        } else if (winnerCode.includes(posicion3)) {
+            elemento3.style.backgroundColor = "white";
+        } else {
+            elemento3.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+        }
+
+
+        if (posicion4 == Code4) {
+            elemento4.style.backgroundColor = "red";
+        }
+        else if (winnerCode.includes(posicion4)) {
+            elemento4.style.backgroundColor = "white";
+        }
+        else {
+            elemento4.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+        }
     }
 }
 
