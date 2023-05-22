@@ -233,8 +233,8 @@ li {
 
 .mastermindBoard {
     margin-top: 3em;
-    width: 30em;
-    height: 45em;
+    width: 25em;
+    height: 35em;
     background-image: url(../img/woodTexture.jpg);
     background-repeat: inherit;
     border-radius: 2em;
