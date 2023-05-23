@@ -88,6 +88,7 @@ jugada.forEach((element, index) => {
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
+        resultado = resultadoArray.join("")
     });
 });
 
