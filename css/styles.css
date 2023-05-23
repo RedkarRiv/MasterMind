@@ -403,13 +403,24 @@ li {
 }
 
 @media (max-width: 768px) {
+    .tirada1 {
+        border-radius: 50%;
+        background-color: black;
+        height: 2em;
+        width: 2em;
+        cursor: pointer;
+        padding: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
     .tirada {
         border-radius: 50%;
         background-color: black;
         height: 2em;
         width: 2em;
         cursor: pointer;
-        padding: 0.1em;
+        padding: 0.8em;
     }
 }
 
