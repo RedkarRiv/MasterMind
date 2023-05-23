@@ -22,7 +22,7 @@ const arrayRandom = (defaultCode) => {
     for (let i = 0; i < 4; i++) {
         const randomIndex = Math.floor(Math.random() * defaultCode.length);
         const randomValue = defaultCode[randomIndex];
-        arrayRandomFinal.push(randomValue);
+        arrayRandomFinal.push(randomValue); 
     }
     return arrayRandomFinal;
 }
@@ -85,6 +85,7 @@ jugada.forEach((element, index) => {
         element.style.backgroundColor = arrayCode[posicion];
         resultadoArray[index] = arrayCode[posicion];
         posicion1 = resultadoArray[0];
+
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
@@ -143,12 +144,6 @@ const comprobacionTirada = () => {
 }
 comprobarDiv.addEventListener("click", comprobacionTirada);
 
-
-//             elemento.style.backgroundColor = "red";
-//             elemento.style.backgroundColor = "white";
-//         }
-//     });
-//
 
 // console.log("el codigo1 ganador es:" + Code1);
 // console.log("el codigo2 ganador es:" + Code2);
