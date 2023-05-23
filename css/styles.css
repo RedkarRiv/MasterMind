@@ -442,6 +442,8 @@ li {
 
 }
 
+
+
 .tiradaActiva {
     border: 0.16em solid rgb(254, 241, 4);
     display: flex;
@@ -660,6 +662,9 @@ a {
     }
 }
 
+.tiradaNull {
+    pointer-events: none;
+    }
 
 /* CSS PAGE: COLOR SELECT */
 

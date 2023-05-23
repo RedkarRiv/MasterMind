@@ -17,8 +17,7 @@ console.log(D);
 console.log(jugador);
 
 // SECRET CODE GENERATOR WITH ARRAY
-
-function arrayRandom(defaultCode) {
+const arrayRandom = (defaultCode) => {
     const arrayRandomFinal = [];
     for (let i = 0; i < 4; i++) {
         const randomIndex = Math.floor(Math.random() * defaultCode.length);
@@ -89,19 +88,6 @@ jugada.forEach((element, index) => {
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
-
-        console.log("La posicion1 es " + posicion1);
-        console.log("La posicion2 es " + posicion2);
-        console.log("La posicion3 es " + posicion3);
-        console.log("La posicion4 es " + posicion4);
-        resultado = resultadoArray.join("")
-        console.log("El result es: " + resultado);
-        console.log("La codewin1 es " + Code1);
-        console.log("La codewin2 es " + Code2);
-        console.log("La codewin3 es " + Code3);
-        console.log("La codewin4 es " + Code4);
-        resultado = resultadoArray.join("")
-        console.log("El result es: " + resultado);
     });
 });
 
@@ -112,10 +98,7 @@ const elemento2 = document.getElementById("puntuacion12")
 const elemento3 = document.getElementById("puntuacion13")
 const elemento4 = document.getElementById("puntuacion14")
 
-comprobarDiv.addEventListener("click", comprobacionTirada);
-
-function comprobacionTirada() {
-    // Asegúrate de tener los valores correctos en las variables posicion1, posicion2, posicion3, posicion4 antes de la comparación
+const comprobacionTirada = () => {
     if (resultado === winnerCode) {
         alert("YOU WIN!!");
     } else {
@@ -124,7 +107,7 @@ function comprobacionTirada() {
         } else if (winnerCode.includes(posicion1)) {
             elemento1.style.backgroundColor = "white";
         } else {
-            elemento1.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+            elemento1.style.backgroundColor = "black"; 
         }
 
 
@@ -133,7 +116,7 @@ function comprobacionTirada() {
         } else if (winnerCode.includes(posicion2)) {
             elemento2.style.backgroundColor = "white";
         } else {
-            elemento2.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+            elemento2.style.backgroundColor = "black";
         }
 
 
@@ -142,7 +125,7 @@ function comprobacionTirada() {
         } else if (winnerCode.includes(posicion3)) {
             elemento3.style.backgroundColor = "white";
         } else {
-            elemento3.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+            elemento3.style.backgroundColor = "black";
         }
 
 
@@ -153,10 +136,12 @@ function comprobacionTirada() {
             elemento4.style.backgroundColor = "white";
         }
         else {
-            elemento4.style.backgroundColor = "black"; // Restablecer el color de fondo si no cumple la condición
+            elemento4.style.backgroundColor = "black"; 
         }
     }
 }
+comprobarDiv.addEventListener("click", comprobacionTirada);
+
 
 //             elemento.style.backgroundColor = "red";
 //             elemento.style.backgroundColor = "white";
