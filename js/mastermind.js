@@ -74,23 +74,6 @@ codeWin2.style.backgroundColor = Code2;
 codeWin3.style.backgroundColor = Code3;
 codeWin4.style.backgroundColor = Code4;
 
-// CONTEXTUAL MENU BLOCKER
-
-
-const mastermindBoard = document.querySelector("#mastermindBackground");
-
-mastermindBoard.addEventListener("contextmenu", (event) => {
-    event.preventDefault();
-});
-
-const elements = mastermindBoard.querySelectorAll("*");
-
-elements.forEach((element) => {
-    element.addEventListener("contextmenu", (event) => {
-        event.preventDefault();
-    });
-});
-
 // PLAYER MOVE SELECTOR
 let currentIndex = 0;
 let resultadoArray = [];
