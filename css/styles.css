@@ -675,11 +675,12 @@ a {
 
 .tiradaNull {
     pointer-events: none;
-    }
+}
 
 /* CSS PAGE: COLOR SELECT */
 
 .selected {
+    padding: 1em;
     margin-top: 3vh;
     width: 24vw;
     height: 10vh;
@@ -702,10 +703,10 @@ a {
 
 .selectedColor {
     MARGIN: 0.32em;
-    width: 20%;
-    height: 80%;
+    width: 5em;
+    height: 5em;
     background-color: white;
-    border-radius: 0.8em;
+    border-radius: 50%;
 }
 
 .selectedColor.selectedC {

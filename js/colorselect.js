@@ -1,11 +1,39 @@
+// COLOR SELECTION DINAMIC DIV GENERATOR COUNTER
+
+let lvlMode = sessionStorage.getItem("nivelSeleccionado");
+
+switch (lvlMode) {
+    case "easy":
+        dificultMode = 4;
+        break;
+    case "medium":
+        dificultMode = 5;
+        break;
+    case "hard":
+        dificultMode = 6;
+        break;
+    default: dificultMode = 4;
+        break;
+}
+
+// COLOR SELECTOR DINAMIC DIV GENERATOR
+
+let selectorDIV = document.querySelector('.selected');
+for (var i = 0; i < dificultMode; i++) {
+    let div = document.createElement('div');
+
+    div.classList.add('selectedColor');
+
+    selectorDIV.appendChild(div);
+}
+
+// COLOR SELECTED REMARKED
+
 const colorPicked = document.querySelector("#pickerColor");
 const selectedColors = document.querySelectorAll(".selectedColor");
-let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let colorMode;
 let colorCounter = 1;
 
-
-// COLOR SELECTED REMARKED
 
 const colorSelections = document.querySelectorAll('.selectedColor');
 
