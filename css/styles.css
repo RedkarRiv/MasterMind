@@ -489,6 +489,9 @@ li {
     cursor: default;
     background: transparent;
     border: transparent;
+    text-shadow: none;
+    box-shadow: none;
+    color: transparent;
 
 }
 

@@ -4,25 +4,49 @@ let C = sessionStorage.getItem("ColorSelected3") ?? "#3ff90b";
 let D = sessionStorage.getItem("ColorSelected4") ?? "#c240d4";
 let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
-
-
-let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let jugador = sessionStorage.getItem("usuario");
-const arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
 
-console.log(A);
-console.log(B);
-console.log(C);
-console.log(D);
-console.log(jugador);
+// DINAMIC BOARD HARD AND MEDIUM
+let lvlMode = sessionStorage.getItem("nivelSeleccionado");
+
+let mediumModeBlock = document.querySelectorAll('.mediumMODE')
+let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')
+let hardModeBlock = document.querySelectorAll('.hardMODE')
+let hardModeTryBlock = document.querySelectorAll('.hardTRY')
+
+switch (lvlMode) {
+    case "medium":
+        mediumModeBlock.forEach((element) => {
+            element.classList.add('filaBlock');
+        });
+        mediumModeTryBlock.forEach((element) => {
+            element.classList.add('tiradaBlock');
+        });
+        break;
+    case "hard":
+        hardModeBlock.forEach((element) => {
+            element.classList.add('filaBlock');
+        });
+        hardModeTryBlock.forEach((element) => {
+            element.classList.add('tiradaBlock');
+        });
+        break;
+    default:
+        break;
+}
+
+
 
 // SECRET CODE GENERATOR WITH ARRAY
+const arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
+
+
 const arrayRandom = (defaultCode) => {
     const arrayRandomFinal = [];
     for (let i = 0; i < 4; i++) {
         const randomIndex = Math.floor(Math.random() * defaultCode.length);
         const randomValue = defaultCode[randomIndex];
-        arrayRandomFinal.push(randomValue); 
+        arrayRandomFinal.push(randomValue);
     }
     return arrayRandomFinal;
 }
@@ -109,7 +133,7 @@ const comprobacionTirada = () => {
         } else if (winnerCode.includes(posicion1)) {
             elemento1.style.backgroundColor = "white";
         } else {
-            elemento1.style.backgroundColor = "black"; 
+            elemento1.style.backgroundColor = "black";
         }
 
 
@@ -138,7 +162,7 @@ const comprobacionTirada = () => {
             elemento4.style.backgroundColor = "white";
         }
         else {
-            elemento4.style.backgroundColor = "black"; 
+            elemento4.style.backgroundColor = "black";
         }
     }
 }
