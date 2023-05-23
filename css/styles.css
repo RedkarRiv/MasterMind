@@ -232,7 +232,6 @@ li {
 }
 
 .mastermindBoard {
-    margin-top: 3em;
     width: 25em;
     height: 35em;
     background-image: url(../img/woodTexture.jpg);
@@ -420,7 +419,7 @@ li {
         height: 2em;
         width: 2em;
         cursor: pointer;
-        padding: 0.8em;
+        padding: 0.9em;
     }
 }
 
