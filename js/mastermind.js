@@ -109,7 +109,6 @@ jugada.forEach((element, index) => {
         element.style.backgroundColor = arrayCode[posicion];
         resultadoArray[index] = arrayCode[posicion];
         posicion1 = resultadoArray[0];
-
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
@@ -125,6 +124,10 @@ const elemento3 = document.getElementById("puntuacion13")
 const elemento4 = document.getElementById("puntuacion14")
 
 const comprobacionTirada = () => {
+    if (posicion1.value || posicion2.value || posicion3.value || posicion4.value) {
+        return;
+    }
+
     if (resultado === winnerCode) {
         alert("YOU WIN!!");
     } else {

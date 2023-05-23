@@ -456,12 +456,14 @@ li {
 
 
 .tiradaActiva {
-    border: 0.16em solid rgb(254, 241, 4);
+    border: 0.16em solid #84BD00;
+    box-shadow: 0.16em 0.16em 0.5em black;
+
     display: flex;
     width: 60%;
     justify-content: space-around;
     align-items: center;
-    border-radius: 0.4em;
+    border-radius: 2em;
 }
 
 
@@ -720,11 +722,6 @@ a {
     border-radius: 0.8em;
     border: solid 0.5em #84BD00;
 }
-
-
-
-
-
 
 #pickerColor {
     padding: 0;
