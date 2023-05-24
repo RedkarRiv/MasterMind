@@ -80,7 +80,8 @@ let resultadoArray = [];
 
 const jugada = document.querySelectorAll(".tirada1");
 
-jugada.forEach((element, index) => {
+jugada.forEach((element, index=0) => {
+    let currentIndex = 0;
     element.addEventListener("click", (event) => {
         const posicion = currentIndex % arrayCode.length;
         currentIndex--;
