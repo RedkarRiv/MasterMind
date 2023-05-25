@@ -510,7 +510,6 @@ li {
     height: 0.8em;
     width: 0.8em;
     border: 0.1em inset grey;
-
 }
 
 .tiradaActiva {
@@ -760,10 +759,9 @@ a {
 /* CSS PAGE: COLOR SELECT */
 
 .selected {
-    padding: 1em;
     margin-top: 3vh;
-    width: 24vw;
-    height: 10vh;
+    width: auto;
+    height: 8em;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -773,7 +771,7 @@ a {
 
     .selected {
         margin-top: 3vh;
-        width: 80vw;
+        width: 90vw;
         height: 10vh;
         display: flex;
         justify-content: space-around;
@@ -784,18 +782,49 @@ a {
 .selectedColor {
     MARGIN: 0.32em;
     width: 5em;
-    height: 5em;
+    padding-bottom: 5em;
     background-color: white;
     border-radius: 50%;
 }
 
+@media (max-width: 768px) {
+
+    .selectedColor {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        MARGIN: 0.32em;
+        width: 3em;
+        height: 3em;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
 .selectedColor.selectedC {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     MARGIN: 0.32em;
-    width: 20%;
-    height: 80%;
+    width: 5em;
+    height: 5em;
     background-color: white;
-    border-radius: 0.8em;
-    border: solid 0.5em #84BD00;
+    transform: scale(1.2);
+    border-radius: 50%;
+    border: solid 0.32em #84BD00;
+}
+
+@media (max-width: 768px) {
+
+    .selectedColor.selectedC {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        MARGIN: 0.32em;
+        width: 3em;
+        height: 3em;
+        background-color: white;
+        transform: scale(1.5);
+        border-radius: 50%;
+        border: solid 0.32em #84BD00;
+    }
 }
 
 #pickerColor {
@@ -836,7 +865,7 @@ a {
 @media (max-width: 768px) {
 
     .prompColorSelect {
-        width: 30vw;
+        width: 80vw;
         color: black;
         text-shadow: 0.08em 0 #84BD00, -0.08em 0 #84BD00, 0 0.08em #84BD00, 0 -0.08em #84BD00,
             0.04em 0.04em #84BD00, -0.04em -0.04em #84BD00, 0.04em -0.04em #84BD00, 0.04em 0.04em #84BD00;
@@ -848,5 +877,6 @@ a {
         align-items: center;
         justify-content: center;
         user-select: none;
+        margin-bottom: 1vh;
     }
 }

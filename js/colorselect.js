@@ -1,6 +1,6 @@
 // COLOR SELECTION DINAMIC DIV GENERATOR COUNTER
 
-let lvlMode = localStorage.getItem("nivelSeleccionado");
+let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 
 switch (lvlMode) {
     case "easy":
@@ -19,10 +19,12 @@ switch (lvlMode) {
 // COLOR SELECTOR DINAMIC DIV GENERATOR
 
 let selectorDIV = document.querySelector('.selected');
+
 for (var i = 0; i < dificultMode; i++) {
     let div = document.createElement('div');
-
     div.classList.add('selectedColor');
+
+    div.setAttribute('data-key', `ColorSelected${i + 1}`);
 
     selectorDIV.appendChild(div);
 }
@@ -46,30 +48,31 @@ colorSelections.forEach((colorSelection) => {
     });
 });
 
-// COLORS SESSIONSTORAGE SAVE
+// // SET AND DISPLAY FOR SELECTED COLOR PICKER
 
-const colorSave = (colorValue) => {
-    const colorKey = `ColorSelected${colorCounter}`;
-    localStorage.setItem(colorKey, colorValue);
-    colorCounter++;
-    console.log(colorMode);
-    console.log(dificultMode);
-    if (colorCounter > colorMode) {
-        colorCounter = 1;
-    }
-};
-
-// SET AND DISPLAY FOR SELECTED COLOR PICKER
 
 selectedColors.forEach((selectedColor) => {
     selectedColor.addEventListener("click", () => {
-        colorPicked.value = "#000000";
+        colorPicked.value = "#00000";
         colorPicked.style.display = "block";
         colorPicked.oninput = () => {
             const colorValue = colorPicked.value;
             selectedColor.style.backgroundColor = colorValue;
             colorPicked.style.display = "none";
-            colorSave(colorValue);
+            colorSave(colorValue, selectedColor.dataset.key);
         };
     });
 });
+
+// // COLORS SESSIONSTORAGE SAVE
+
+const colorSave = (colorValue, colorKey) => {
+    sessionStorage.setItem(colorKey, colorValue);
+    console.log(colorMode);
+    console.log(dificultMode);
+};
+
+
+
+
+
