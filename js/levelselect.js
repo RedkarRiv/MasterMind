@@ -1,5 +1,5 @@
 
 const levelSave = (level) => {
     console.log(level);
-    sessionStorage.setItem("nivelSeleccionado", level);
+    localStorage.setItem("nivelSeleccionado", level);
 }

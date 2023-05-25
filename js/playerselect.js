@@ -3,8 +3,7 @@ const nameSave = () => {
     if (!valor) {
         valor = "El/La jugador/a";
     }
-    console.log(valor);
-    sessionStorage.setItem("usuario", valor);
+    localStorage.setItem("usuario", valor);
     window.location.href = "./levelselect.html";
 };
 

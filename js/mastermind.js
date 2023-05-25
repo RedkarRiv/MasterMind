@@ -1,13 +1,13 @@
-let A = sessionStorage.getItem("ColorSelected1") ?? "#fc0303";
-let B = sessionStorage.getItem("ColorSelected2") ?? "#0602ed";
-let C = sessionStorage.getItem("ColorSelected3") ?? "#3ff90b";
-let D = sessionStorage.getItem("ColorSelected4") ?? "#c240d4";
-let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
-let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
-let jugador = sessionStorage.getItem("usuario");
+let A = localStorage.getItem("ColorSelected1") ?? "#fc0303";
+let B = localStorage.getItem("ColorSelected2") ?? "#0602ed";
+let C = localStorage.getItem("ColorSelected3") ?? "#3ff90b";
+let D = localStorage.getItem("ColorSelected4") ?? "#c240d4";
+let E = localStorage.getItem("ColorSelected5") ?? "#04f1ed";
+let F = localStorage.getItem("ColorSelected6") ?? "#dc6f09";
+let jugador = localStorage.getItem("usuario");
 
 // DINAMIC BOARD HARD AND MEDIUM
-let lvlMode = sessionStorage.getItem("nivelSeleccionado");
+let lvlMode = localStorage.getItem("nivelSeleccionado");
 
 let mediumModeBlock = document.querySelectorAll('.mediumMODE')
 let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')

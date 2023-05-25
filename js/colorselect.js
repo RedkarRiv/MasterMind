@@ -1,6 +1,6 @@
 // COLOR SELECTION DINAMIC DIV GENERATOR COUNTER
 
-let lvlMode = sessionStorage.getItem("nivelSeleccionado");
+let lvlMode = localStorage.getItem("nivelSeleccionado");
 
 switch (lvlMode) {
     case "easy":
@@ -46,29 +46,14 @@ colorSelections.forEach((colorSelection) => {
     });
 });
 
-// COLORS SESSIONSTORAGE SAVE COUNTER
-
-switch (lvlMode) {
-    case "easy":
-        colorMode = 4;
-        break;
-    case "medium":
-        colorMode = 5;
-        break;
-    case "hard":
-        colorMode = 6;
-        break;
-    default:
-        colorMode = 4;
-        break;
-}
-
 // COLORS SESSIONSTORAGE SAVE
 
 const colorSave = (colorValue) => {
     const colorKey = `ColorSelected${colorCounter}`;
-    sessionStorage.setItem(colorKey, colorValue);
+    localStorage.setItem(colorKey, colorValue);
     colorCounter++;
+    console.log(colorMode);
+    console.log(dificultMode);
     if (colorCounter > colorMode) {
         colorCounter = 1;
     }
