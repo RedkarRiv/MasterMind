@@ -17,7 +17,7 @@
     .barraMenu {
         background: linear-gradient(163deg, rgba(178, 255, 0, 1) 0%, rgba(132, 189, 0, 1) 21%, rgba(132, 189, 0, 0.9192051820728291) 35%, rgba(178, 255, 0, 0.8435749299719888) 47%, rgba(132, 189, 0, 0.9248074229691877) 65%, rgba(132, 189, 0, 0.804359243697479) 78%, rgba(178, 255, 0, 1) 100%);
         width: 80vw;
-        height: 3em;
+        height: 2.5em;
         border-radius: 2em;
         margin-bottom: 2em;
         margin-top: 2em;
