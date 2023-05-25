@@ -1,7 +1,7 @@
 /* NAVBAR BETA */
 
 .barraMenu {
-background-color: #9bca2db6;
+    background: linear-gradient(163deg, rgba(178, 255, 0, 1) 0%, rgba(132, 189, 0, 1) 21%, rgba(132, 189, 0, 0.9192051820728291) 35%, rgba(178, 255, 0, 0.8435749299719888) 47%, rgba(132, 189, 0, 0.9248074229691877) 65%, rgba(132, 189, 0, 0.804359243697479) 78%, rgba(178, 255, 0, 1) 100%);
     width: 20em;
     height: 3em;
     border-radius: 2em;
@@ -11,10 +11,11 @@ background-color: #9bca2db6;
     justify-content: space-around;
     align-items: center;
 }
+
 @media (max-width: 768px) {
 
-.barraMenu {
-    background-color: #9bca2db6;
+    .barraMenu {
+        background: linear-gradient(163deg, rgba(178, 255, 0, 1) 0%, rgba(132, 189, 0, 1) 21%, rgba(132, 189, 0, 0.9192051820728291) 35%, rgba(178, 255, 0, 0.8435749299719888) 47%, rgba(132, 189, 0, 0.9248074229691877) 65%, rgba(132, 189, 0, 0.804359243697479) 78%, rgba(178, 255, 0, 1) 100%);
         width: 80vw;
         height: 3em;
         border-radius: 2em;
@@ -23,20 +24,36 @@ background-color: #9bca2db6;
         display: flex;
         justify-content: space-around;
         align-items: center;
-    
+
     }
-}   
+}
+
+.svgColor {
+    filter: invert(57%) sepia(71%) saturate(796%) hue-rotate(37deg) brightness(97%) contrast(101%);
+}
 
 .elementoMenu {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 2em;
-height: 2em;
-border-radius: 1em;
-padding: 0.3em;
-background-color: #84BD00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    padding: 0.4em;
+    background-color: black;
 }
+
+.elementoMenu2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    padding: 0.6em;
+    background-color: black;
+}
+
 
 
 
@@ -92,7 +109,7 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 100vh;
-    width: 80vw;
+    width: 100vw;
     margin: 0;
 }
 
@@ -272,7 +289,7 @@ li {
     height: 100vh;
     background-color: black;
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -289,8 +306,7 @@ li {
 
 @media (max-width: 768px) {
     .mastermindBoard {
-        margin-top: 1em;
-        width: 80%;
+        width: 90%;
         height: 80%;
         background-image: url(../img/woodTexture.jpg);
         background-repeat: inherit;
@@ -527,6 +543,22 @@ li {
     box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
 }
 
+/* @media (max-width: 768px) {
+
+    .filaBlock {
+        background-image: url(../img/blockedMove.jpg);
+        width: 60%;
+        height: 80%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 -1.2em;
+        box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
+    }
+} */
+
 .tiradaBlock {
     background-color: transparent;
     user-select: none;
@@ -539,51 +571,6 @@ li {
 
 }
 
-
-.chatbot {
-    margin: 0.5em;
-    width: 20vw;
-    height: 2em;
-    background-color: #282828;
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .chatbot {
-        margin-top: 0.5em;
-        width: 70vw;
-        height: 2em;
-        background-color: #282828;
-        border-radius: 0.4em;
-    }
-}
-
-#textChatbot {
-    margin-top: 0.16em;
-    text-align: center;
-    color: #84BD00;
-    text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
-        0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
-    animation: aparecer 15s linear forwards;
-}
-
-@keyframes aparecer {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    30% {
-        transform: translateX(0);
-    }
-
-    70% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
 
 /* CSS PAGE: PLAYERSELECT */
 
