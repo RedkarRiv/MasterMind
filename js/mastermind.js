@@ -76,7 +76,7 @@ codeWin4.style.backgroundColor = Code4;
 let currentIndex = 0;
 let resultadoArray = [];
 
-const jugada = document.querySelectorAll(".tirada1");
+const jugada = document.querySelectorAll(".tryActive");
 
 jugada.forEach((element, index = 0) => {
     let currentIndex = 0;
@@ -94,64 +94,71 @@ jugada.forEach((element, index = 0) => {
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
-        resultado = resultadoArray.join("")
+        fullTry = resultadoArray.join("")
     });
 });
 
-// CHECKING MOVE PLAYER
-const comprobarDiv = document.getElementById("comprobacion1");
-const elemento1 = document.getElementById("puntuacion11")
-const elemento2 = document.getElementById("puntuacion12")
-const elemento3 = document.getElementById("puntuacion13")
-const elemento4 = document.getElementById("puntuacion14")
 
-const comprobacionTirada = () => {
+//CHANGING LINE OF MOVE
+const fileMove = document.querySelectorAll(".fila")
+const tryMove = document.querySelectorAll(".tirada")
+const ptoMove = document.querySelectorAll(".pto")
+
+console.log("Esto es fileMove: " + fileMove)
+console.log("Esto es tryMove: " + tryMove)
+console.log("Esto es ptoMove: " + ptoMove)
+
+// CHECKING MOVE PLAYER
+const checkButton = document.getElementById("checkButtonActive");
+scoreMove = document.querySelectorAll(".scoreActive")
+
+const checkFullTry = () => {
     if (posicion1.value || posicion2.value || posicion3.value || posicion4.value) {
         return;
     }
 
-    if (resultado === winnerCode) {
+    if (fullTry === winnerCode) {
         alert("YOU WIN!!");
     } else {
         if (posicion1 == Code1) {
-            elemento1.style.backgroundColor = "red";
+            scoreMove[3].style.backgroundColor = "red";
         } else if (winnerCode.includes(posicion1)) {
-            elemento1.style.backgroundColor = "white";
+            scoreMove[3].style.backgroundColor = "white";
         } else {
-            elemento1.style.backgroundColor = "black";
+            scoreMove[3].style.backgroundColor = "black";
         }
 
 
         if (posicion2 == Code2) {
-            elemento2.style.backgroundColor = "red";
+            scoreMove[2].style.backgroundColor = "red";
         } else if (winnerCode.includes(posicion2)) {
-            elemento2.style.backgroundColor = "white";
+            scoreMove[2].style.backgroundColor = "white";
         } else {
-            elemento2.style.backgroundColor = "black";
+            scoreMove[2].style.backgroundColor = "black";
         }
 
 
         if (posicion3 == Code3) {
-            elemento3.style.backgroundColor = "red";
+            scoreMove[1].style.backgroundColor = "red";
         } else if (winnerCode.includes(posicion3)) {
-            elemento3.style.backgroundColor = "white";
+            scoreMove[1].style.backgroundColor = "white";
         } else {
-            elemento3.style.backgroundColor = "black";
+            scoreMove[1].style.backgroundColor = "black";
         }
 
 
         if (posicion4 == Code4) {
-            elemento4.style.backgroundColor = "red";
+            scoreMove[0].style.backgroundColor = "red";
         }
         else if (winnerCode.includes(posicion4)) {
-            elemento4.style.backgroundColor = "white";
+            scoreMove[0].style.backgroundColor = "white";
         }
         else {
-            elemento4.style.backgroundColor = "black";
+            scoreMove[0].style.backgroundColor = "black";
         }
     }
 }
-comprobarDiv.addEventListener("click", comprobacionTirada);
+checkButton.addEventListener("click", checkFullTry);
 
 
 // console.log("el codigo1 ganador es:" + Code1);
