@@ -386,6 +386,10 @@ li {
     }
 }
 
+.tiradaNull {
+    pointer-events: none;
+}
+
 
 .botonComprobacion {
     background-color: grey;
@@ -745,10 +749,6 @@ a {
         user-select: none;
 
     }
-}
-
-.tiradaNull {
-    pointer-events: none;
 }
 
 /* CSS PAGE: COLOR SELECT */

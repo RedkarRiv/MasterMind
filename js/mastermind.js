@@ -6,9 +6,9 @@ let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 let jugador = sessionStorage.getItem("usuario");
 
+
 // DINAMIC BOARD HARD AND MEDIUM
 let lvlMode = sessionStorage.getItem("nivelSeleccionado");
-
 let mediumModeBlock = document.querySelectorAll('.mediumMODE')
 let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')
 let hardModeBlock = document.querySelectorAll('.hardMODE')
@@ -37,7 +37,6 @@ switch (lvlMode) {
 
 // SECRET CODE GENERATOR WITH ARRAY
 const arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
-
 
 const arrayRandom = (defaultCode) => {
     const arrayRandomFinal = [];
@@ -72,11 +71,44 @@ codeWin2.style.backgroundColor = Code2;
 codeWin3.style.backgroundColor = Code3;
 codeWin4.style.backgroundColor = Code4;
 
-// PLAYER MOVE SELECTOR
-let currentIndex = 0;
-let resultadoArray = [];
+// // SALTO DE FILA
 
-const jugada = document.querySelectorAll(".tryActive");
+// const rowsArray = Array.from(document.querySelectorAll('.fila'));
+// const rowsArrayClass = rowsArray.map((fila) => fila.className).reverse();
+
+// for (let i = 0; i < rowsArrayClass.length; i++) {
+//     let row = rowsArrayClass[i];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// PLAYER MOVE SELECTOR
+let resultadoArray = [];
+let posicion1, posicion2, posicion3, posicion4, fullTry;
+const jugada = document.querySelectorAll(".tirada1");
 
 jugada.forEach((element, index = 0) => {
     let currentIndex = 0;
@@ -94,26 +126,22 @@ jugada.forEach((element, index = 0) => {
         posicion2 = resultadoArray[1];
         posicion3 = resultadoArray[2];
         posicion4 = resultadoArray[3];
-        fullTry = resultadoArray.join("")
+        fullTry = resultadoArray.join("");
+        console.log("Esta es la posicion1 " + posicion1);
+        console.log("Esta es la posicion2 " + posicion2);
+        console.log("Esta es la posicion3 " + posicion3);
+        console.log("Esta es la posicion4 " + posicion4);
     });
 });
 
-
-//CHANGING LINE OF MOVE
-const fileMove = document.querySelectorAll(".fila")
-const tryMove = document.querySelectorAll(".tirada")
-const ptoMove = document.querySelectorAll(".pto")
-
-console.log("Esto es fileMove: " + fileMove)
-console.log("Esto es tryMove: " + tryMove)
-console.log("Esto es ptoMove: " + ptoMove)
+let checkButton = document.querySelector(".comprobacion");
 
 // CHECKING MOVE PLAYER
-const checkButton = document.getElementById("checkButtonActive");
-scoreMove = document.querySelectorAll(".scoreActive")
+const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry) => {
+    const puntuacionAct = document.querySelector(".puntuacionActiva")
+    const scoreMove = puntuacionAct.querySelectorAll(".score");
 
-const checkFullTry = () => {
-    if (posicion1.value || posicion2.value || posicion3.value || posicion4.value) {
+    if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
         return;
     }
 
@@ -128,7 +156,6 @@ const checkFullTry = () => {
             scoreMove[3].style.backgroundColor = "black";
         }
 
-
         if (posicion2 == Code2) {
             scoreMove[2].style.backgroundColor = "red";
         } else if (winnerCode.includes(posicion2)) {
@@ -136,7 +163,6 @@ const checkFullTry = () => {
         } else {
             scoreMove[2].style.backgroundColor = "black";
         }
-
 
         if (posicion3 == Code3) {
             scoreMove[1].style.backgroundColor = "red";
@@ -146,19 +172,30 @@ const checkFullTry = () => {
             scoreMove[1].style.backgroundColor = "black";
         }
 
-
         if (posicion4 == Code4) {
             scoreMove[0].style.backgroundColor = "red";
-        }
-        else if (winnerCode.includes(posicion4)) {
+        } else if (winnerCode.includes(posicion4)) {
             scoreMove[0].style.backgroundColor = "white";
-        }
-        else {
+        } else {
             scoreMove[0].style.backgroundColor = "black";
         }
     }
-}
-checkButton.addEventListener("click", checkFullTry);
+
+};
+checkButton.addEventListener('click', () => {
+    console.log("Esta es la posicion1 " + posicion1);
+    console.log("Esta es la posicion2 " + posicion2);
+    console.log("Esta es la posicion3 " + posicion3);
+    console.log("Esta es la posicion4 " + posicion4);
+    checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry);
+});
+
+
+
+// checkButton.addEventListener("click", checkFullTry);
+
+// checkButton.addEventListener('click', activateRows);
+
 
 
 // console.log("el codigo1 ganador es:" + Code1);
@@ -172,3 +209,8 @@ checkButton.addEventListener("click", checkFullTry);
 // console.log("el codigo3 jugado es:" + arrayCode[2]);
 // console.log("el codigo4 jugado es:" + arrayCode[3]);
 // console.log("el codigo jugado es:" + result);
+
+// //CHANGING LINE OF MOVE
+// const tiradaMove = document.querySelectorAll(".tiradaInactiva")
+// const tryMove = document.querySelectorAll(".tirada")
+// const ptoMove = document.querySelectorAll(".pto")
