@@ -182,8 +182,9 @@ body {
 @media (max-width: 768px) {
 
     .textButton {
-        background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjkzYTAxNWI3MzU3MTBjM2M4M2U1YTgwY2QxYWI1YTVmOTkyNjUyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/zXmbOaTpbY6mA/giphy.gif);
+        background-image: url(../img/woodTexture.jpg);
         background-position: center;
+        background-repeat: repeat;
         height: 10vh;
         width: 60vw;
         border-radius: 20%/20%;
