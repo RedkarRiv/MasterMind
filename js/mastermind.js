@@ -73,42 +73,17 @@ codeWin4.style.backgroundColor = Code4;
 
 // // SALTO DE FILA
 
-// const rowsArray = Array.from(document.querySelectorAll('.fila'));
-// const rowsArrayClass = rowsArray.map((fila) => fila.className).reverse();
+
 
 // for (let i = 0; i < rowsArrayClass.length; i++) {
 //     let row = rowsArrayClass[i];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // PLAYER MOVE SELECTOR
 let resultadoArray = [];
 let posicion1, posicion2, posicion3, posicion4, fullTry;
-const jugada = document.querySelectorAll(".tirada1");
+const jugadaActiva = document.querySelector(".tiradaActiva")
+const jugada = jugadaActiva.querySelectorAll(".tirada");
 
 jugada.forEach((element, index = 0) => {
     let currentIndex = 0;
@@ -133,8 +108,7 @@ jugada.forEach((element, index = 0) => {
         console.log("Esta es la posicion4 " + posicion4);
     });
 });
-
-let checkButton = document.querySelector(".comprobacion");
+let checkButton = document.getElementById("comprobacion1");
 
 // CHECKING MOVE PLAYER
 const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry) => {
@@ -182,6 +156,22 @@ const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry)
     }
 
 };
+
+const rowsArray = Array.from(document.querySelectorAll('.fila'));
+console.log(rowsArray)
+// let currentI = rowsArray.length - 1;
+
+for (i = 9; i >= 0; i--) {
+    console.log(rowsArray[i]);
+}
+
+
+
+
+
+// checkButton.addEventListener("click", () => {
+
+
 checkButton.addEventListener('click', () => {
     console.log("Esta es la posicion1 " + posicion1);
     console.log("Esta es la posicion2 " + posicion2);

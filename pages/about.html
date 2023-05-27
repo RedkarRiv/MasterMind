@@ -16,137 +16,132 @@
 <body>
 
     <body>
-        <div class="mainAbout container-fluid p-0">
-            <!-- NAVBAR -->
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-1">
-                <div class="container-fluid">
-                    <!-- LOGO NAVBAR -->
-                    <a class="navbar-brand" href="../index.html">
-                        <div class="logoNavbar"></div>
-                    </a>
-                    <!-- BURGER NAVBAR -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- SECTIONS -->
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-                        <div class=" d-flex align-items-center justify-content-end" id="navbarNavAltMarkup">
-                            <div class="navbar-nav m-1">
-                                <a class="nav-item nav-link active" href="../index.html">Inicio<span
-                                        class="sr-only">(current)</span></a>
-                                <a class="nav-item nav-link" href="../pages/about.html">Cómo se
-                                    juega</a>
-                                <a class="nav-item nav-link" href="#">Sobre mí</a>
-                            </div>
-                        </div>
+        <!--ABOUT BACKGROUND -->
+        <div id="aboutBackground" class="container-fluid d-flex flex-column P-0">
+            <div class="barraMenu">
+                <a href="../index.html">
+                    <div class="elementoMenu"> <img src="../img/house_icon.svg" alt="Home icon" class="svgColor"> </div>
+                </a>
+                <a href="./about.html">
+                    <div class="elementoMenu"><img src="../img/question_icon.svg" alt="Help icon" class="svgColor">
                     </div>
+                </a>
+                <a href="./levelselect.html">
+
+                    <div class="elementoMenu"> <img
+                            src="../img/mechanism_options_settings_configuration_setting_icon.svg" alt="Level icon"
+                            class="svgColor"> </div>
+                </a>
+                <a href="./mastermind.html">
+                    <div class="elementoMenu"><img src="../img/refresh_icon.svg" alt="Reload icon" class="svgColor">
+                    </div>
+                </a>
+                <a href="./colorselect.html">
+                    <div class="elementoMenu"> <img src="../img/navigation_back_arrow_left_icon.svg" alt="Back icon"
+                            class="svgColor"></div>
+                </a>
+
+            </div>
+            <div class="logoBackground"></div>
+            <!-- DESCRIPTION ABOUT -->
+            <div class="aboutTextContainer d-flex flex-column align-items-start justify-content-center p-1">
+                <div class="aboutTitle">CÓMO SE JUEGA A MASTERMIND</div>
+                <!-- INDEX RULES -->
+                <div id="menuRules" class="m-3">
+                    <ul>
+                        <li><a href="#introduccion">Introducción</a></li>
+                        <li><a href="#reglas">Reglas del juego</a></li>
+                        <li><a href="#modos">Modos de juego</a></li>
+                        <li><a href="#final">Final de partida</a></li>
+                        <li><a href="#ejemplo">Ejemplo de partida</a></li>
+                        <li><a href="#estrategias">Estrategias de juego</a></li>
+                    </ul>
                 </div>
-            </nav>
-            <!--ABOUT BACKGROUND -->
-            <div id="aboutBackground" class="container-fluid d-flex flex-column">
-                <div class="logoBackground"></div>
-                <!-- DESCRIPTION ABOUT -->
-                <div class="aboutTextContainer d-flex flex-column align-items-start justify-content-center p-1">
-                    <div class="aboutTitle">CÓMO SE JUEGA A MASTERMIND</div>
-                    <!-- INDEX RULES -->
-                    <div id="menuRules" class="m-3">
-                        <ul>
-                            <li><a href="#introduccion">Introducción</a></li>
-                            <li><a href="#reglas">Reglas del juego</a></li>
-                            <li><a href="#modos">Modos de juego</a></li>
-                            <li><a href="#final">Final de partida</a></li>
-                            <li><a href="#ejemplo">Ejemplo de partida</a></li>
-                            <li><a href="#estrategias">Estrategias de juego</a></li>
-                        </ul>
-                    </div>
 
-                    <div id="Rules" class="m-2">
-                        <h2 class="titleRules" id="introduccion">Introducción</h2>
-                        <p>El juego MasterMind fue creado por Mordecai Meirowitz en 1970. Fue diseñado como una versión
-                            de mesa del juego de lápiz y papel llamado "Bulls and Cows". MasterMind se convirtió en un
-                            éxito mundial, destacándose por su combinación de lógica, estrategia y deducción.</p>
-                        <p>El juego tiene un trasfondo psicológico y didáctico interesante, ya que estimula el
-                            razonamiento lógico, la capacidad de deducción y la creatividad. Además, fomenta el
-                            pensamiento estratégico y la toma de decisiones basada en las pistas proporcionadas.</p>
+                <div id="Rules" class="m-2">
+                    <h2 class="titleRules" id="introduccion">Introducción</h2>
+                    <p>El juego MasterMind fue creado por Mordecai Meirowitz en 1970. Fue diseñado como una versión
+                        de mesa del juego de lápiz y papel llamado "Bulls and Cows". MasterMind se convirtió en un
+                        éxito mundial, destacándose por su combinación de lógica, estrategia y deducción.</p>
+                    <p>El juego tiene un trasfondo psicológico y didáctico interesante, ya que estimula el
+                        razonamiento lógico, la capacidad de deducción y la creatividad. Además, fomenta el
+                        pensamiento estratégico y la toma de decisiones basada en las pistas proporcionadas.</p>
 
 
-                        <h2 class="titleRules" id="reglas">Reglas del juego</h2>
-                        <ol>
-                            <li>El juego consiste en adivinar un código secreto creado por la CPU (computadora).</li>
-                            <li>El código secreto está compuesto por una combinación de colores.</li>
-                            <li>Los colores disponibles para crear el código pueden variar según el modo de juego.</li>
-                            <li>Cada intento para adivinar el código se denomina "tirada".</li>
-                            <li>Después de cada tirada, se proporcionarán pistas sobre la exactitud de los colores en el
-                                código secreto.</li>
-                            <li>Las pistas indicarán si un color se encuentra en el código secreto y si está en la
-                                posición correcta.</li>
-                            <li>El objetivo es adivinar el código secreto en el menor número de intentos posibles.</li>
-                        </ol>
+                    <h2 class="titleRules" id="reglas">Reglas del juego</h2>
+                    <ol>
+                        <li>El juego consiste en adivinar un código secreto creado por la CPU (computadora).</li>
+                        <li>El código secreto está compuesto por una combinación de colores.</li>
+                        <li>Los colores disponibles para crear el código pueden variar según el modo de juego.</li>
+                        <li>Cada intento para adivinar el código se denomina "tirada".</li>
+                        <li>Después de cada tirada, se proporcionarán pistas sobre la exactitud de los colores en el
+                            código secreto.</li>
+                        <li>Las pistas indicarán si un color se encuentra en el código secreto y si está en la
+                            posición correcta.</li>
+                        <li>El objetivo es adivinar el código secreto en el menor número de intentos posibles.</li>
+                    </ol>
 
-                        <h2 class="titleRules" id="modos">Modos de juego</h2>
-                        <ul>
-                            <li><strong>Fácil:</strong> Se seleccionan 4 colores para crear el código secreto, pudiendo
-                                repetirse. Se permiten 10 tiradas para adivinar el código.</li>
-                            <li><strong>Medio:</strong> Se seleccionan 5 colores para crear el código secreto, pudiendo
-                                repetirse. Se permiten 8 tiradas para adivinar el código.</li>
-                            <li><strong>Difícil:</strong> Se seleccionan 6 colores para crear el código secreto,
-                                pudiendo repetirse. Se permiten 6 tiradas para adivinar el código.</li>
-                        </ul>
+                    <h2 class="titleRules" id="modos">Modos de juego</h2>
+                    <ul>
+                        <li><strong>Fácil:</strong> Se seleccionan 4 colores para crear el código secreto, pudiendo
+                            repetirse. Se permiten 10 tiradas para adivinar el código.</li>
+                        <li><strong>Medio:</strong> Se seleccionan 5 colores para crear el código secreto, pudiendo
+                            repetirse. Se permiten 8 tiradas para adivinar el código.</li>
+                        <li><strong>Difícil:</strong> Se seleccionan 6 colores para crear el código secreto,
+                            pudiendo repetirse. Se permiten 6 tiradas para adivinar el código.</li>
+                    </ul>
 
-                        <h2 class="titleRules" id="final">Final de partida</h2>
-                        <p>La partida puede terminar de las siguientes formas:</p>
-                        <ol>
-                            <li>Adivinar el código secreto en los intentos disponibles: Si se logra descubrir el código
-                                antes de agotar los intentos, se considera una victoria.</li>
-                            <li>Finalizar la partida: El jugador tiene la opción de finalizar la partida en cualquier
-                                momento pulsando el botón correspondiente.</li>
-                            <li>Agotar los intentos y reiniciar: Si se gastan todos los intentos sin haber adivinado el
-                                código, el jugador puede reiniciar la partida para intentarlo de nuevo.</li>
-                        </ol>
-                        <h2 class="titleRules" id="ejemplo">Ejemplo de partida</h2>
-                        <p>Supongamos que en el modo fácil se seleccionan los siguientes colores para el código secreto:
-                            Rojo, Verde, Amarillo y Azul. Y el jugador realiza las siguientes tiradas:</p>
-                        <ul>
-                            <li>Tirada 1: Se elige Rojo, Verde, Verde, Amarillo. Las pistas indican que hay 3 colores
-                                correctos, pero solo 1 está en la posición correcta.</li>
-                            <li>Tirada 2: Se elige Rojo, Amarillo, Verde, Azul. Las pistas indican que hay 4 colores
-                                correctos, pero solo 2 están en la posición correcta.</li>
-                            <li>Tirada 3: Se elige Rojo, Amarillo, Verde, Verde. Las pistas indican que hay 4 colores
-                                correctos y todos están en la posición correcta. El jugador adivina el código y gana la
-                                partida.</li>
-                        </ul>
-                        <h2 class="titleRules" id="estrategias">Estrategias de juego</h2>
-                        <p>A continuación, se presentan algunas estrategias que puedes aplicar durante el juego:</p>
-                        <ol>
-                            <li><strong>Estrategia de búsqueda sistemática:</strong> Explora diferentes combinaciones de
-                                colores en cada tirada, utilizando una lógica estructurada. Recomendada para todos los
-                                modos de juego.</li>
-                            <li><strong>Estrategia de patrones:</strong> Analiza las pistas de las tiradas anteriores
-                                para identificar patrones y tendencias en el código secreto. Recomendada para el modo
-                                Medio y Difícil.</li>
-                            <li><strong>Estrategia de adivinanza aleatoria:</strong> Realiza combinaciones aleatorias en
-                                cada tirada sin basarse en las pistas anteriores. No recomendada, ya que no utiliza la
-                                información proporcionada por las pistas.</li>
-                        </ol>
+                    <h2 class="titleRules" id="final">Final de partida</h2>
+                    <p>La partida puede terminar de las siguientes formas:</p>
+                    <ol>
+                        <li>Adivinar el código secreto en los intentos disponibles: Si se logra descubrir el código
+                            antes de agotar los intentos, se considera una victoria.</li>
+                        <li>Finalizar la partida: El jugador tiene la opción de finalizar la partida en cualquier
+                            momento pulsando el botón correspondiente.</li>
+                        <li>Agotar los intentos y reiniciar: Si se gastan todos los intentos sin haber adivinado el
+                            código, el jugador puede reiniciar la partida para intentarlo de nuevo.</li>
+                    </ol>
+                    <h2 class="titleRules" id="ejemplo">Ejemplo de partida</h2>
+                    <p>Supongamos que en el modo fácil se seleccionan los siguientes colores para el código secreto:
+                        Rojo, Verde, Amarillo y Azul. Y el jugador realiza las siguientes tiradas:</p>
+                    <ul>
+                        <li>Tirada 1: Se elige Rojo, Verde, Verde, Amarillo. Las pistas indican que hay 3 colores
+                            correctos, pero solo 1 está en la posición correcta.</li>
+                        <li>Tirada 2: Se elige Rojo, Amarillo, Verde, Azul. Las pistas indican que hay 4 colores
+                            correctos, pero solo 2 están en la posición correcta.</li>
+                        <li>Tirada 3: Se elige Rojo, Amarillo, Verde, Verde. Las pistas indican que hay 4 colores
+                            correctos y todos están en la posición correcta. El jugador adivina el código y gana la
+                            partida.</li>
+                    </ul>
+                    <h2 class="titleRules" id="estrategias">Estrategias de juego</h2>
+                    <p>A continuación, se presentan algunas estrategias que puedes aplicar durante el juego:</p>
+                    <ol>
+                        <li><strong>Estrategia de búsqueda sistemática:</strong> Explora diferentes combinaciones de
+                            colores en cada tirada, utilizando una lógica estructurada. Recomendada para todos los
+                            modos de juego.</li>
+                        <li><strong>Estrategia de patrones:</strong> Analiza las pistas de las tiradas anteriores
+                            para identificar patrones y tendencias en el código secreto. Recomendada para el modo
+                            Medio y Difícil.</li>
+                        <li><strong>Estrategia de adivinanza aleatoria:</strong> Realiza combinaciones aleatorias en
+                            cada tirada sin basarse en las pistas anteriores. No recomendada, ya que no utiliza la
+                            información proporcionada por las pistas.</li>
+                    </ol>
 
-                        <p>Recuerda que estas estrategias son solo sugerencias y puedes adaptar tu enfoque según tu
-                            estilo de juego y preferencias. ¡Diviértete jugando al MasterMind!</p>
+                    <p>Recuerda que estas estrategias son solo sugerencias y puedes adaptar tu enfoque según tu
+                        estilo de juego y preferencias. ¡Diviértete jugando al MasterMind!</p>
 
-                    </div>
+                </div>
 
 
-                    <div class="videoTutorialMastermind m-2">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dMHxyulGrEk"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                <div class="videoTutorialMastermind m-2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dMHxyulGrEk"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
 
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
