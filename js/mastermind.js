@@ -38,7 +38,7 @@ switch (lvlMode) {
 }
 
 // SECRET CODE GENERATOR WITH ARRAY
-const arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
+let arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
 
 const arrayRandom = (defaultCode) => {
     const arrayRandomFinal = [];
@@ -76,7 +76,10 @@ codeWin4.style.backgroundColor = Code4;
 // // CHECKING PLAYER MOVE
 const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry) => {
     const scoreMove = puntuacionAct.querySelectorAll(".score");
-
+    console.log("La posicion 1 es:" + posicion1);
+    console.log("La posicion 2 es:" + posicion2);
+    console.log("La posicion 3 es:" + posicion3);
+    console.log("La posicion 4 es:" + posicion4);
     if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
         return;
     }
@@ -140,12 +143,6 @@ const playerSelcFun = (jugadaActiva) => {
             fullTry = resultadoArray.join("");
             console.log("El array del codigo es: " + arrayCode)
             console.log("El array resultante es: " + resultadoArray);
-            console.log("La posicion 1 es:" + posicion1);
-            console.log("La posicion 2 es:" + posicion2);
-            console.log("La posicion 3 es:" + posicion3);
-            console.log("La posicion 4 es:" + posicion4);
-            console.log("La posicion 4 es:" + posicion4);
-
         });
     });
 }
@@ -171,21 +168,32 @@ function performIteration() {
         const jugada = document.querySelectorAll(".tirada");
         console.log("Esto es la jugada Activa " + jugadaActiva);
         console.log("Esto es la jugada " + jugada.length)
+
         playerSelcFun(jugadaActiva);
 
         checkButton.addEventListener('click', () => {
-            // Eliminar clases antes de pasar a la siguiente iteración
-            const idIndex = rowsArrayIndex;
-            document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
-            document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
-            document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
-            document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
+            if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
+                return;
+            } else {
+                // Eliminar clases antes de pasar a la siguiente iteración
+                const idIndex = rowsArrayIndex;
+                document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
+                document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
+                document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
+                document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
 
-            // Actualizar puntuaciones
-            checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+                // Actualizar puntuaciones
+                checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+                posicion1 = undefined;
+                posicion2 = undefined;
+                posicion3 = undefined;
+                posicion4 = undefined;
+                resultadoArray = [undefined, undefined, undefined, undefined];
+                arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
+                // Avanzar a la siguiente iteración
+                performIteration();
 
-            // Avanzar a la siguiente iteración
-            performIteration();
+            }
         });
 
         rowsArrayIndex++;
