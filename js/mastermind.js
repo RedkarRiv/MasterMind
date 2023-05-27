@@ -36,6 +36,7 @@ switch (lvlMode) {
         lvlModeCount = 6;
         break;
     default:
+        lvlModeCount = 10;
         break;
 }
 
@@ -70,10 +71,12 @@ const codeWin2 = document.querySelector("#winCode2");
 const codeWin3 = document.querySelector("#winCode3");
 const codeWin4 = document.querySelector("#winCode4");
 
-codeWin1.style.backgroundColor = Code1;
-codeWin2.style.backgroundColor = Code2;
-codeWin3.style.backgroundColor = Code3;
-codeWin4.style.backgroundColor = Code4;
+const codeWinnerShow = () => {
+    codeWin1.style.backgroundColor = Code1;
+    codeWin2.style.backgroundColor = Code2;
+    codeWin3.style.backgroundColor = Code3;
+    codeWin4.style.backgroundColor = Code4;
+}
 
 // // CHECKING PLAYER MOVE
 const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry) => {
@@ -87,7 +90,9 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
     }
 
     if (fullTry === winnerCode) {
+        codeWinnerShow();
         alert("YOU WIN!!");
+        return;
     } else {
         if (posicion1 == Code1) {
             scoreMove[3].style.backgroundColor = "red";
@@ -143,8 +148,8 @@ const playerSelcFun = (jugadaActiva) => {
             posicion3 = resultadoArray[2];
             posicion4 = resultadoArray[3];
             fullTry = resultadoArray.join("");
-            console.log("El array del codigo es: " + arrayCode)
-            console.log("El array resultante es: " + resultadoArray);
+            // console.log("El array del codigo es: " + arrayCode)
+            // console.log("El array resultante es: " + resultadoArray);
         });
     });
 }
@@ -154,10 +159,9 @@ let rowsArrayIndex = 0;
 
 const performIteration = () => {
     if (rowsArrayIndex < lvlModeCount) {
-        const element = rowsArray[rowsArrayIndex];
         const idIndex = rowsArrayIndex + 1;
-        console.log("El indice actual es " + rowsArrayIndex);
-        console.log("El elemento actual es " + element);
+        // console.log("El indice actual es " + rowsArrayIndex);
+        // console.log("El elemento actual es " + element);
 
         // Asignar clases
         document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
@@ -168,9 +172,10 @@ const performIteration = () => {
         puntuacionAct = document.querySelector(".puntuacionActiva")
         const jugadaActiva = document.querySelector(".tiradaActiva");
         const jugada = document.querySelectorAll(".tirada");
+        console.log("Esto es el rowsArrayIndex " + rowsArrayIndex)
         console.log("Esto es la jugada Activa " + jugadaActiva);
         console.log("Esto es la jugada " + jugada.length)
-
+        console.log("Esto es el numero de tiradas " + lvlModeCount)
         playerSelcFun(jugadaActiva);
 
         checkButton.addEventListener('click', () => {
@@ -195,13 +200,18 @@ const performIteration = () => {
                 // Avanzar a la siguiente iteración
                 performIteration();
 
+
+
             }
         });
         rowsArrayIndex++;
         console.log(rowsArrayIndex);
     }
     else {
+        codeWinnerShow();
         alert("You lose");
+        return;
+
     }
 }
 
