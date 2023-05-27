@@ -504,12 +504,12 @@ li {
 .tiradaActiva {
     border: 0.16em solid #84BD00;
     box-shadow: 0.16em 0.16em 0.5em black;
-
     display: flex;
     width: 60%;
     justify-content: space-around;
     align-items: center;
     border-radius: 2em;
+    transform: scale(1.12);
 }
 
 

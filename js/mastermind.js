@@ -7,7 +7,7 @@ let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 let jugador = sessionStorage.getItem("usuario");
 let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkButton;
 let resultadoArray = [undefined, undefined, undefined, undefined];
-
+let lvlModeCount = 10;
 
 // DINAMIC BOARD HARD AND MEDIUM
 let lvlMode = sessionStorage.getItem("nivelSeleccionado");
@@ -24,6 +24,7 @@ switch (lvlMode) {
         mediumModeTryBlock.forEach((element) => {
             element.classList.add('tiradaBlock');
         });
+        lvlModeCount = 8;
         break;
     case "hard":
         hardModeBlock.forEach((element) => {
@@ -32,6 +33,7 @@ switch (lvlMode) {
         hardModeTryBlock.forEach((element) => {
             element.classList.add('tiradaBlock');
         });
+        lvlModeCount = 6;
         break;
     default:
         break;
@@ -150,8 +152,8 @@ const rowsArray = Array.from(document.querySelectorAll('.fila')).reverse();
 console.log(rowsArray);
 let rowsArrayIndex = 0;
 
-function performIteration() {
-    if (rowsArrayIndex < rowsArray.length) {
+const performIteration = () => {
+    if (rowsArrayIndex < lvlModeCount) {
         const element = rowsArray[rowsArrayIndex];
         const idIndex = rowsArrayIndex + 1;
         console.log("El indice actual es " + rowsArrayIndex);
@@ -195,9 +197,11 @@ function performIteration() {
 
             }
         });
-
         rowsArrayIndex++;
         console.log(rowsArrayIndex);
+    }
+    else {
+        alert("You lose");
     }
 }
 
