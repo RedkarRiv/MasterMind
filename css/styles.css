@@ -273,17 +273,61 @@ body {
         0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
 }
 
+@media (max-width: 768px) {
+
+    .aboutTitle {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        font-size: 90%;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        color: #84BD00;
+        text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
+            0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+    }
+}
+
 li {
     margin-bottom: 0.5em;
 }
 
 .videoTutorialMastermind {
-    width: 100%;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.videoTutorialMastermind video {
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+
+
+    .videoTutorialMastermind {
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .videoTutorialMastermind video {
+        width: 50vw;
+
+    }
+}
 
 .linkContainer {
     width: 100%;
@@ -299,6 +343,8 @@ li {
     color: #84BD00;
     display: flex;
     justify-content: center;
+    padding-right: 4em;
+    font-size: 80%;
 }
 
 .titleRules {
