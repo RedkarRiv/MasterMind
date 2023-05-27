@@ -5,6 +5,8 @@ let D = sessionStorage.getItem("ColorSelected4") ?? "#c240d4";
 let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 let jugador = sessionStorage.getItem("usuario");
+let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry;
+let resultadoArray = [undefined, undefined, undefined, undefined];
 
 
 // DINAMIC BOARD HARD AND MEDIUM
@@ -71,21 +73,8 @@ codeWin2.style.backgroundColor = Code2;
 codeWin3.style.backgroundColor = Code3;
 codeWin4.style.backgroundColor = Code4;
 
-// // SALTO DE FILA
-
-
-
-// for (let i = 0; i < rowsArrayClass.length; i++) {
-//     let row = rowsArrayClass[i];
-
-
-// PLAYER MOVE SELECTOR
-
-let checkButton = document.getElementById("comprobacion1");
-
-// CHECKING MOVE PLAYER
-const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry) => {
-    const puntuacionAct = document.querySelector(".puntuacionActiva")
+// // CHECKING PLAYER MOVE
+const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry) => {
     const scoreMove = puntuacionAct.querySelectorAll(".score");
 
     if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
@@ -127,9 +116,39 @@ const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry)
             scoreMove[0].style.backgroundColor = "black";
         }
     }
-
 };
 
+// PLAYER SELECTOR
+const playerSelcFun = (jugadaActiva) => {
+    const jugada = jugadaActiva.querySelectorAll(".tirada");
+    jugada.forEach((element, index = 0) => {
+        let currentIndex = 0;
+        element.addEventListener("click", (event) => {
+            const posicion = currentIndex % arrayCode.length;
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = arrayCode.length - 1;
+            }
+
+            element.style.backgroundColor = arrayCode[posicion];
+            resultadoArray[index] = arrayCode[posicion];
+            posicion1 = resultadoArray[0];
+            posicion2 = resultadoArray[1];
+            posicion3 = resultadoArray[2];
+            posicion4 = resultadoArray[3];
+            fullTry = resultadoArray.join("");
+            console.log("El array del codigo es: " + arrayCode)
+            console.log("El array resultante es: " + resultadoArray);
+            console.log("La posicion 1 es:" + posicion1);
+            console.log("La posicion 2 es:" + posicion2);
+            console.log("La posicion 3 es:" + posicion3);
+            console.log("La posicion 4 es:" + posicion4);
+            console.log("La posicion 4 es:" + posicion4);
+
+        });
+    });
+}
 const rowsArray = Array.from(document.querySelectorAll('.fila')).reverse();
 console.log(rowsArray);
 let rowsArrayIndex = 0;
@@ -146,35 +165,13 @@ function performIteration() {
         document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
         document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
         document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
-
-        // PLAYER SELECTOR
-        let resultadoArray = [];
-        let posicion1, posicion2, posicion3, posicion4, fullTry;
+        checkButton = document.getElementById(`comprobacion${idIndex}`);
+        puntuacionAct = document.querySelector(".puntuacionActiva")
         const jugadaActiva = document.querySelector(".tiradaActiva");
-        const jugada = jugadaActiva.querySelectorAll(".tirada");
-
-        jugada.forEach((element, index = 0) => {
-            let currentIndex = 0;
-            element.addEventListener("click", (event) => {
-                const posicion = currentIndex % arrayCode.length;
-                currentIndex--;
-
-                if (currentIndex < 0) {
-                    currentIndex = arrayCode.length - 1;
-                }
-
-                element.style.backgroundColor = arrayCode[posicion];
-                resultadoArray[index] = arrayCode[posicion];
-                posicion1 = resultadoArray[0];
-                posicion2 = resultadoArray[1];
-                posicion3 = resultadoArray[2];
-                posicion4 = resultadoArray[3];
-                fullTry = resultadoArray.join("");
-            });
-        });
-
-        // Activar función de comprobación
-        checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry);
+        const jugada = document.querySelectorAll(".tirada");
+        console.log("Esto es la jugada Activa " + jugadaActiva);
+        console.log("Esto es la jugada " + jugada.length)
+        playerSelcFun(jugadaActiva);
 
         rowsArrayIndex++;
         console.log(rowsArrayIndex);
@@ -191,18 +188,20 @@ checkButton.addEventListener('click', () => {
     document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
     document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
 
+    // Actualizar puntuaciones
+    checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+
     // Avanzar a la siguiente iteración
     performIteration();
 });
+// const puntuacionAct = document.querySelector(".puntuacionActiva");
+// const posicion1 = resultadoArray[0];
+// const posicion2 = resultadoArray[1];
+// const posicion3 = resultadoArray[2];
+// const posicion4 = resultadoArray[3];
+// const fullTry = resultadoArray.join("");
+// checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry,);
 
-// checkButton.addEventListener("click", () => {
-
-
-
-
-// checkButton.addEventListener("click", checkFullTry);
-
-// checkButton.addEventListener('click', activateRows);
 
 
 
