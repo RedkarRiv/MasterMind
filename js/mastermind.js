@@ -5,7 +5,7 @@ let D = sessionStorage.getItem("ColorSelected4") ?? "#c240d4";
 let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 let jugador = sessionStorage.getItem("usuario");
-let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry;
+let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkButton;
 let resultadoArray = [undefined, undefined, undefined, undefined];
 
 
@@ -165,13 +165,28 @@ function performIteration() {
         document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
         document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
         document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
-        checkButton = document.getElementById(`comprobacion${idIndex}`);
+        let checkButton = document.getElementById(`comprobacion${idIndex}`);
         puntuacionAct = document.querySelector(".puntuacionActiva")
         const jugadaActiva = document.querySelector(".tiradaActiva");
         const jugada = document.querySelectorAll(".tirada");
         console.log("Esto es la jugada Activa " + jugadaActiva);
         console.log("Esto es la jugada " + jugada.length)
         playerSelcFun(jugadaActiva);
+
+        checkButton.addEventListener('click', () => {
+            // Eliminar clases antes de pasar a la siguiente iteración
+            const idIndex = rowsArrayIndex;
+            document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
+            document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
+            document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
+            document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
+
+            // Actualizar puntuaciones
+            checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+
+            // Avanzar a la siguiente iteración
+            performIteration();
+        });
 
         rowsArrayIndex++;
         console.log(rowsArrayIndex);
@@ -180,20 +195,7 @@ function performIteration() {
 
 performIteration(); // Iniciar la primera iteración al cargar el HTML
 
-checkButton.addEventListener('click', () => {
-    // Eliminar clases antes de pasar a la siguiente iteración
-    const idIndex = rowsArrayIndex;
-    document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
-    document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
-    document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
-    document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
 
-    // Actualizar puntuaciones
-    checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
-
-    // Avanzar a la siguiente iteración
-    performIteration();
-});
 // const puntuacionAct = document.querySelector(".puntuacionActiva");
 // const posicion1 = resultadoArray[0];
 // const posicion2 = resultadoArray[1];
