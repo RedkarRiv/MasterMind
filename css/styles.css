@@ -150,8 +150,9 @@ body {
 
 .textButton {
     /* background: linear-gradient(163deg, rgba(255, 0, 0, 0.9472163865546218) 0%, rgba(235, 225, 15, 0.9136029411764706) 40%, rgba(26, 255, 0, 0.8435749299719888) 67%, rgba(31, 0, 189, 0.8631827731092436) 88%); */
-    background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjkzYTAxNWI3MzU3MTBjM2M4M2U1YTgwY2QxYWI1YTVmOTkyNjUyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/zXmbOaTpbY6mA/giphy.gif);
+    background-image: url(../img/woodTexture.jpg);
     background-position: center;
+    background-repeat: repeat;
     height: 15vh;
     width: 60vw;
     border-radius: 20%/50%;
