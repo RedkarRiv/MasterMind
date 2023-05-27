@@ -80,34 +80,7 @@ codeWin4.style.backgroundColor = Code4;
 
 
 // PLAYER MOVE SELECTOR
-let resultadoArray = [];
-let posicion1, posicion2, posicion3, posicion4, fullTry;
-const jugadaActiva = document.querySelector(".tiradaActiva")
-const jugada = jugadaActiva.querySelectorAll(".tirada");
 
-jugada.forEach((element, index = 0) => {
-    let currentIndex = 0;
-    element.addEventListener("click", (event) => {
-        const posicion = currentIndex % arrayCode.length;
-        currentIndex--;
-
-        if (currentIndex < 0) {
-            currentIndex = arrayCode.length - 1;
-        }
-
-        element.style.backgroundColor = arrayCode[posicion];
-        resultadoArray[index] = arrayCode[posicion];
-        posicion1 = resultadoArray[0];
-        posicion2 = resultadoArray[1];
-        posicion3 = resultadoArray[2];
-        posicion4 = resultadoArray[3];
-        fullTry = resultadoArray.join("");
-        console.log("Esta es la posicion1 " + posicion1);
-        console.log("Esta es la posicion2 " + posicion2);
-        console.log("Esta es la posicion3 " + posicion3);
-        console.log("Esta es la posicion4 " + posicion4);
-    });
-});
 let checkButton = document.getElementById("comprobacion1");
 
 // CHECKING MOVE PLAYER
@@ -157,28 +130,73 @@ const checkingPlayerMove = (posicion1, posicion2, posicion3, posicion4, fullTry)
 
 };
 
-const rowsArray = Array.from(document.querySelectorAll('.fila'));
-console.log(rowsArray)
-// let currentI = rowsArray.length - 1;
+const rowsArray = Array.from(document.querySelectorAll('.fila')).reverse();
+console.log(rowsArray);
+let rowsArrayIndex = 0;
 
-for (i = 9; i >= 0; i--) {
-    console.log(rowsArray[i]);
+function performIteration() {
+    if (rowsArrayIndex < rowsArray.length) {
+        const element = rowsArray[rowsArrayIndex];
+        const idIndex = rowsArrayIndex + 1;
+        console.log("El indice actual es " + rowsArrayIndex);
+        console.log("El elemento actual es " + element);
+
+        // Asignar clases
+        document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
+        document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
+        document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
+        document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
+
+        // PLAYER SELECTOR
+        let resultadoArray = [];
+        let posicion1, posicion2, posicion3, posicion4, fullTry;
+        const jugadaActiva = document.querySelector(".tiradaActiva");
+        const jugada = jugadaActiva.querySelectorAll(".tirada");
+
+        jugada.forEach((element, index = 0) => {
+            let currentIndex = 0;
+            element.addEventListener("click", (event) => {
+                const posicion = currentIndex % arrayCode.length;
+                currentIndex--;
+
+                if (currentIndex < 0) {
+                    currentIndex = arrayCode.length - 1;
+                }
+
+                element.style.backgroundColor = arrayCode[posicion];
+                resultadoArray[index] = arrayCode[posicion];
+                posicion1 = resultadoArray[0];
+                posicion2 = resultadoArray[1];
+                posicion3 = resultadoArray[2];
+                posicion4 = resultadoArray[3];
+                fullTry = resultadoArray.join("");
+            });
+        });
+
+        // Activar función de comprobación
+        checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry);
+
+        rowsArrayIndex++;
+        console.log(rowsArrayIndex);
+    }
 }
 
+performIteration(); // Iniciar la primera iteración al cargar el HTML
 
+checkButton.addEventListener('click', () => {
+    // Eliminar clases antes de pasar a la siguiente iteración
+    const idIndex = rowsArrayIndex;
+    document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
+    document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
+    document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
+    document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
 
-
+    // Avanzar a la siguiente iteración
+    performIteration();
+});
 
 // checkButton.addEventListener("click", () => {
 
-
-checkButton.addEventListener('click', () => {
-    console.log("Esta es la posicion1 " + posicion1);
-    console.log("Esta es la posicion2 " + posicion2);
-    console.log("Esta es la posicion3 " + posicion3);
-    console.log("Esta es la posicion4 " + posicion4);
-    checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry);
-});
 
 
 
