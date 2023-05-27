@@ -69,7 +69,7 @@ body {
 #mainBackground {
     width: 100vw;
     height: 100vh;
-    background-image: url(../img/vector-neuron-background.jpg);
+    background-color: black;
     background-image: REPEAT;
     background-size: COVER;
     background-position: center;
@@ -83,9 +83,7 @@ body {
     #mainBackground {
         width: 100vw;
         height: 100vh;
-        background-image: url(../img/vector-neuron-background.jpg);
-        background-size: cover;
-        background-position: center;
+        background-color: black;
         display: flex;
         justify-content: flex-start;
     }
@@ -128,12 +126,11 @@ body {
 
 
 .textButton {
-    background-color: grey;
-    background-image: url(../img/metalSpotsTexture2.jpg);
+    background-image: url(../img/vector-neuron-background.jpg);
     background-size: cover;
-    height: 5em;
-    width: 80%;
-    border-radius: 10%/10%;
+    height: 15vh;
+    width: 60vw;
+    border-radius: 20%/50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,11 +138,11 @@ body {
     box-shadow: 0.3em 0.3em 0.45em rgba(0, 0, 0, 0.5);
     font-size: 150%;
     font-weight: bold;
-    color: white;
-    text-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    color: #84BD00;
+    text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
+        0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
     user-select: none;
     text-align: center;
-
 }
 
 
@@ -278,6 +275,19 @@ li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    #mastermindBackground {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTQ2MDU0ZTUxMmRlMmJkOWM3NmFjNTJhNDMyNDAwZTJkMzYwMmZmZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/l3vRnoppYtfEbemBO/giphy.gif);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
 }
 
 .mastermindBoard {
@@ -553,22 +563,6 @@ li {
     box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
 }
 
-/* @media (max-width: 768px) {
-
-    .filaBlock {
-        background-image: url(../img/blockedMove.jpg);
-        width: 60%;
-        height: 80%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 0 -1.2em;
-        box-shadow: 0.1em 0.1em #282828, -0.1em 0.1em #282828, 0.05em -0.05em #282828, -0.05em -0.05em #282828;
-    }
-} */
-
 .tiradaBlock {
     background-color: transparent;
     user-select: none;
@@ -596,14 +590,26 @@ li {
 
 .logoBackground {
     background-image: url(../img/logo_transBack_greenText.png);
-    width: 20em;
-    height: 15em;
+    width: 15em;
+    height: 10em;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
+
+.logoBackgroundSmall {
+    background-image: url(../img/logo_transBack_greenText.png);
+    width: 15em;
+    height: 10em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
 
 
 .prompPlayerSelect {
