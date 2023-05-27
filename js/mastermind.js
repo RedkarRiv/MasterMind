@@ -59,20 +59,24 @@ console.log(secretCode);
 
 // SECRET CODE CONVERTED IN SIMPLE CODE STRING AND WINNER CODE STRING
 
-const Code1 = secretCode[0].toString();
-const Code2 = secretCode[1].toString();
-const Code3 = secretCode[2].toString();
-const Code4 = secretCode[3].toString();
-const winnerCode = Code1 + Code2 + Code3 + Code4;
+let Code1 = secretCode[0].toString();
+let Code2 = secretCode[1].toString();
+let Code3 = secretCode[2].toString();
+let Code4 = secretCode[3].toString();
+let winnerCode = Code1 + Code2 + Code3 + Code4;
 
 // WINNER CODE SHOW
 
-const codeWin1 = document.querySelector("#winCode1");
-const codeWin2 = document.querySelector("#winCode2");
-const codeWin3 = document.querySelector("#winCode3");
-const codeWin4 = document.querySelector("#winCode4");
+let codeWin1 = document.querySelector("#winCode1");
+let codeWin2 = document.querySelector("#winCode2");
+let codeWin3 = document.querySelector("#winCode3");
+let codeWin4 = document.querySelector("#winCode4");
 
 const codeWinnerShow = () => {
+    codeWin1.classList.remove("SolucionLogo");
+    codeWin2.classList.remove("SolucionLogo");
+    codeWin3.classList.remove("SolucionLogo");
+    codeWin4.classList.remove("SolucionLogo");
     codeWin1.style.backgroundColor = Code1;
     codeWin2.style.backgroundColor = Code2;
     codeWin3.style.backgroundColor = Code3;
