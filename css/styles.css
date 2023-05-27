@@ -350,7 +350,7 @@ li {
     text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
         0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
     width: 100%;
-    font-size: 150%;
+    font-size: 120%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -382,19 +382,38 @@ li {
 
 
 .botonComprobacion {
-    background-color: grey;
-    color: black;
+    background-color: rgb(15, 65, 14);
+    color: white;
     text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
     box-shadow: 0.2em 0.2em #282828;
     font-size: 50%;
-    width: 80%;
-    height: 25%;
+    width: 60%;
+    height: 30%;
     border-radius: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .botonComprobacion {
+        background-color: rgb(15, 65, 14);
+        color: white;
+        text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+        box-shadow: 0.2em 0.2em #282828;
+        font-size: 40%;
+        width: 60%;
+        height: 35%;
+        border-radius: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
 }
 
 .celdaBoton {

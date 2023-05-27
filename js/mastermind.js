@@ -1,9 +1,10 @@
 let A = sessionStorage.getItem("ColorSelected1") ?? "#fc0303";
 let B = sessionStorage.getItem("ColorSelected2") ?? "#0602ed";
-let C = sessionStorage.getItem("ColorSelected3") ?? "#3ff90b";
-let D = sessionStorage.getItem("ColorSelected4") ?? "#c240d4";
-let E = sessionStorage.getItem("ColorSelected5") ?? "#04f1ed";
+let C = sessionStorage.getItem("ColorSelected3") ?? "#38a01b";
+let D = sessionStorage.getItem("ColorSelected4") ?? "#cce816";
+let E = sessionStorage.getItem("ColorSelected5") ?? "#dc25c1";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
+
 let jugador = sessionStorage.getItem("usuario");
 let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkButton;
 let resultadoArray = [undefined, undefined, undefined, undefined];
@@ -208,10 +209,12 @@ const performIteration = () => {
         console.log(rowsArrayIndex);
     }
     else {
+        checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
         codeWinnerShow();
-        alert("You lose");
+        setTimeout(() => {
+            alert("You lose");
+        }, 0); // Se establece un retraso mínimo de 0 milisegundos
         return;
-
     }
 }
 
