@@ -144,7 +144,7 @@ body {
 .textContainer:hover {
     color: inherit;
     text-decoration: none;
-    transform: scale(1.5)
+    transform: scale(1.5);
 }
 
 
