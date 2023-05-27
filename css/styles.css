@@ -87,19 +87,9 @@ body {
         background-size: cover;
         background-position: center;
         display: flex;
-        justify-content: center;
-        padding-top: 15%;
+        justify-content: flex-start;
     }
 }
-
-.logoNavbar {
-    height: 2em;
-    background-image: url(../img/logotext_transBack_greenText.png);
-    background-size: cover;
-    width: 10em;
-}
-
-
 
 .containerButtons {
     display: flex;
