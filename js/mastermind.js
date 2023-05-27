@@ -213,7 +213,7 @@ const performIteration = () => {
         codeWinnerShow();
         setTimeout(() => {
             alert("You lose");
-        }, 0); // Se establece un retraso mínimo de 0 milisegundos
+        }, 100); // Se establece un retraso mínimo de 0 milisegundos
         return;
     }
 }

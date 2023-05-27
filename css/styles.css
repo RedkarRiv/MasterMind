@@ -508,7 +508,7 @@ li {
     border-radius: 50%;
     background: linear-gradient(119deg, rgba(87, 89, 89, 0.106) 0%, rgba(66, 68, 68, 0.308) 18%, rgba(4, 4, 4, 0.571) 100%);
     background-color: black;
-    background-image: url(../img/logo_blackBack_greenText_justHead.png);
+    /* background-image: url(../img/logo_blackBack_greenText_justHead.png); */
     background-size: cover;
     background-position: 50% 0%;
     height: 3em;
