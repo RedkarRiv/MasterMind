@@ -224,31 +224,3 @@ const performIteration = () => {
 
 performIteration(); // Iniciar la primera iteración al cargar el HTML
 
-
-// const puntuacionAct = document.querySelector(".puntuacionActiva");
-// const posicion1 = resultadoArray[0];
-// const posicion2 = resultadoArray[1];
-// const posicion3 = resultadoArray[2];
-// const posicion4 = resultadoArray[3];
-// const fullTry = resultadoArray.join("");
-// checkingPlayerMove(posicion1, posicion2, posicion3, posicion4, fullTry,);
-
-
-
-
-// console.log("el codigo1 ganador es:" + Code1);
-// console.log("el codigo2 ganador es:" + Code2);
-// console.log("el codigo3 ganador es:" + Code3);
-// console.log("el codigo4 ganador es:" + Code4);
-// console.log("el codigo ganador es:" + winnerCode);
-
-// console.log("el codigo1 jugado es:" + arrayCode[0]);
-// console.log("el codigo2 jugado es:" + arrayCode[1]);
-// console.log("el codigo3 jugado es:" + arrayCode[2]);
-// console.log("el codigo4 jugado es:" + arrayCode[3]);
-// console.log("el codigo jugado es:" + result);
-
-// //CHANGING LINE OF MOVE
-// const tiradaMove = document.querySelectorAll(".tiradaInactiva")
-// const tryMove = document.querySelectorAll(".tirada")
-// const ptoMove = document.querySelectorAll(".pto")
