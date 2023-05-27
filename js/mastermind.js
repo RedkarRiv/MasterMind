@@ -5,7 +5,6 @@ let D = sessionStorage.getItem("ColorSelected4") ?? "#cce816";
 let E = sessionStorage.getItem("ColorSelected5") ?? "#dc25c1";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 
-let jugador = sessionStorage.getItem("usuario");
 let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkButton;
 let resultadoArray = [undefined, undefined, undefined, undefined];
 let lvlModeCount = 10;
@@ -64,7 +63,7 @@ let Code2 = secretCode[1].toString();
 let Code3 = secretCode[2].toString();
 let Code4 = secretCode[3].toString();
 let winnerCode = Code1 + Code2 + Code3 + Code4;
-
+console.log(winnerCode)
 // WINNER CODE SHOW
 
 let codeWin1 = document.querySelector("#winCode1");
@@ -96,7 +95,17 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
 
     if (fullTry === winnerCode) {
         codeWinnerShow();
-        alert("YOU WIN!!");
+        sessionStorage.setItem("game result", 1)
+        if (lvlMode == "hard") {
+            sessionStorage.setItem("secret mode", 1);
+        } else {
+            sessionStorage.setItem("secret mode", 0);
+        }
+        setTimeout(() => {
+            alert("YOU WIN!!");
+            window.location.href = "./final.html";
+        }, 100);
+
         return;
     } else {
         if (posicion1 == Code1) {
@@ -215,9 +224,13 @@ const performIteration = () => {
     else {
         checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
         codeWinnerShow();
+        sessionStorage.setItem("game result", 0);
+        sessionStorage.setItem("secret mode", 0);
         setTimeout(() => {
             alert("You lose");
+            window.location.href = "./final.html";
         }, 100); // Se establece un retraso mínimo de 0 milisegundos
+
         return;
     }
 }

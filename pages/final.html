@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>MastertMind</title>
+</head>
+
+<body>
+
+    <body>
+        <!--WINNER BACKGROUND -->
+        <div id="winnerBackground" class="container-fluid d-flex flex-column p-0 m-0 justify-content-between">
+            <div class="barraMenu">
+                <a href="../index.html">
+                    <div class="elementoMenu"> <img src="../img/house_icon.svg" alt="Home icon" class="svgColor"> </div>
+                </a>
+                <a href="./about.html">
+                    <div class="elementoMenu"><img src="../img/question_icon.svg" alt="Help icon" class="svgColor">
+                    </div>
+                </a>
+                <a href="./levelselect.html">
+
+                    <div class="elementoMenu"> <img
+                            src="../img/mechanism_options_settings_configuration_setting_icon.svg" alt="Level icon"
+                            class="svgColor"> </div>
+                </a>
+                <a href="javascript:location.reload();">
+                    <div class="elementoMenu"><img src="../img/refresh_icon.svg" alt="Reload icon" class="svgColor">
+                    </div>
+                </a>
+                <a href="javascript:history.go(-1)">
+                    <div class="elementoMenu"> <img src="../img/navigation_back_arrow_left_icon.svg" alt="Back icon"
+                            class="svgColor"></div>
+                </a>
+
+            </div>
+            <div id="finalMessage" class="m-5"></div>
+            <div id="finalAnimation"></div>
+            <div class="finalOptions"></div>
+            <div id="secretMode"></div>
+            <!-- MAIN SCRIP -->
+            <script src="../js/final.js"></script>
+            <!-- BOOTSTRAP SCRIP -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous">
+                </script>
+        </div>
+
+    </body>
+
+</html>

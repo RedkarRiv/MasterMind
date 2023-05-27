@@ -203,7 +203,93 @@ body {
     }
 }
 
+/* CSS PAGE: WINNER */
+#winnerBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    background-size: 10%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 5em;
+}
 
+#finalMessage {
+    width: 80vw;
+    height: 10vh;
+    background-color: transparent;
+    color: #84BD00;
+    text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
+        0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    #finalMessage {
+        width: 80vw;
+        height: 10vh;
+        background-color: transparent;
+        color: #84BD00;
+        text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
+            0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 150%;
+        text-align: center;
+    }
+}
+
+#finalAnimation {
+    height: 50vh;
+    width: 60vw;
+}
+
+@media (max-width: 768px) {
+
+    #finalAnimation {
+        height: 50vh;
+        width: 60vw;
+    }
+
+    .finalAnimationWin {
+        background-image: url(../img/win_gif.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 75%;
+    }
+
+    .finalAnimationLose {
+        background-image: url(../img/lose_gif.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
+.finalAnimationWin {
+    background-image: url(../img/win_gif.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.finalAnimationLose {
+    background-image: url(../img/lose_gif.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
 
 /* CSS PAGE: ABOUT */
 
