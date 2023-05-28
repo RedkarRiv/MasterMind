@@ -15,6 +15,8 @@ let mediumModeBlock = document.querySelectorAll('.mediumMODE')
 let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')
 let hardModeBlock = document.querySelectorAll('.hardMODE')
 let hardModeTryBlock = document.querySelectorAll('.hardTRY')
+let extremeModeBlock = document.querySelectorAll('.extremeMODE')
+let extreModeTryBlock = document.querySelectorAll('.extremeTRY')
 
 switch (lvlMode) {
     case "medium":
@@ -35,13 +37,22 @@ switch (lvlMode) {
         });
         lvlModeCount = 6;
         break;
+    case "extreme":
+        extremeModeBlock.forEach((element) => {
+            element.classList.add('filaBlock');
+        });
+        extreModeTryBlock.forEach((element) => {
+            element.classList.add('tiradaBlock');
+        });
+        lvlModeCount = 4;
+        break;
     default:
         lvlModeCount = 10;
         break;
 }
 
 // SECRET CODE GENERATOR WITH ARRAY
-let arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
+let arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : (lvlMode === "hard") ? [A, B, C, D, E] : [A, B, C, D, E, F];
 
 const arrayRandom = (defaultCode) => {
     const arrayRandomFinal = [];
@@ -107,9 +118,8 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
         scoreMove[3].style.backgroundColor = "red";
 
         setTimeout(() => {
-            alert("YOU WIN!!");
             window.location.href = "./final.html";
-        }, 100);
+        }, 500);
         return;
     }
     else {
@@ -230,12 +240,10 @@ const performIteration = () => {
         sessionStorage.setItem("game result", 0);
         sessionStorage.setItem("secret mode", 0);
         setTimeout(() => {
-            alert("You lose");
             window.location.href = "./final.html";
-        }, 100); // Se establece un retraso mínimo de 0 milisegundos
+        }, 1000); // Se establece un retraso mínimo de 0 milisegundos
 
         return;
     }
 }
 performIteration(); // Iniciar la primera iteración al cargar el HTML
-
