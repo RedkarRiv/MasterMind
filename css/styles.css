@@ -282,7 +282,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 200%;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -299,8 +299,9 @@ body {
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        font-size: 150%;
+        font-size: 1.5em;
         text-align: center;
+        margin: 1em;
     }
 }
 
@@ -504,6 +505,7 @@ li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -516,6 +518,8 @@ li {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        overflow: hidden;
+
     }
 }
 
