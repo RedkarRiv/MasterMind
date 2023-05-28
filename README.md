@@ -52,11 +52,12 @@ La web con el juego **🎮Mastermind🎮 - by Redkar Rival** se puede ejecutar e
 
 <p align="center">
 <img src="img/ejemBoard.png"  width="" height="400">
-
 </p>
 
 - Para empezar a jugar, pulsa sobre las casillas resaltadas hasta seleccionar los 4 colores de tu jugada. Una vez hayas seleccionado los 4 colores, pulsa el boton "Comprobar" para revisar la puntuación y continuar el juego.
-    - 🚨 Se pintará la puntuacion a la derecha segun los colores y posiciones acertadas y los colores presentes en la combinacion ganadora pero no en la posicion correcta.
+    - 🚨 Se pintará la puntuacion a la derecha segun los colores y posiciones acertadas y los colores presentes en la combinacion ganadora pero no en la posicion correcta. En la siguiente imagen puedes ver como se puntua: Rojo si aciertas posicion y color, blanco si aciertas solo color pero no posicion. <p align="center">
+<img src="img/ejemPunt.png"  width="40" height="50">
+</p>
     - Si aciertas los 4 colores y las 4 posiciones, habrás ganado.
     - Si no aciertas la combinacion de colores en el número de tiradas disponibles, habrás perdido.
     - Si quieres volver a empezar la partida, puedes pulsar el boton "Recargar" o actualizar la pagina.
