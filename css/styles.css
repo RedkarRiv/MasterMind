@@ -126,7 +126,6 @@ body {
         text-shadow: 0.08em 0 black, -0.08em 0 black, 0 0.08em black, 0 -0.08em black,
             0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
         font-weight: bold;
-        margin-bottom: 1em;
         font-family: 'Franklin Gothic Medium';
     }
 }
