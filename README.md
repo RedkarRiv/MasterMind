@@ -26,7 +26,7 @@ Durante el desarrollo de la gameboy se ha utilizado: HTML para la distribución 
 - Todos los elementos se han creado desde cero utilizando el CSS, a excepción del logo 🕹️**GAME BOY Color**, los stickers de los 👾 pokemons y el fondo de pantalla.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RedkarRiv/GH_FSD_GBC/master/img/GBC2.png"  width="" height="400">
+<img src="img/ejemBoard.png"  width="" height="400">
 
 <img src="https://raw.githubusercontent.com/RedkarRiv/GH_FSD_GBC/master/img/GBC3.png" width="" height="400">
 </p>
