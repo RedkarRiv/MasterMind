@@ -1123,7 +1123,7 @@ a {
 #pickerColor {
     padding: 0;
     margin-top: 2em;
-    width: 30vw;
+    width: 10vw;
     height: 5vh;
     border-radius: 0.8em;
     border: #84BD00 solid 0.20em;
@@ -1153,7 +1153,6 @@ a {
     align-items: center;
     justify-content: center;
     user-select: none;
-    margin-bottom: 2vh;
 
 }
 
