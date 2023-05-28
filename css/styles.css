@@ -87,22 +87,30 @@ body {
     position: relative;
     width: 60vw;
     height: 60vh;
+    user-select: none;
+
 }
 
 .videoContainer video {
     width: 60vw;
     height: 60vh;
+    user-select: none;
+
 }
 
 .videoContainer2 {
     position: relative;
     width: 30vw;
     height: 15vh;
+    user-select: none;
+
 }
 
 .videoContainer2 video {
     width: 30vw;
     height: 30vh;
+    user-select: none;
+
 }
 
 #gameName {
@@ -112,8 +120,6 @@ body {
         0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
     font-weight: bold;
     transition: color 2s ease-in-out;
-    padding-right: 1em;
-    padding-left: 1em;
     font-family: 'Franklin Gothic Medium';
 
 }
@@ -137,6 +143,7 @@ body {
         position: relative;
         width: 70vw;
         height: auto;
+        user-select: none;
     }
 }
 
@@ -145,17 +152,23 @@ body {
     .videoContainer video {
         width: 70vw;
         height: auto;
+        user-select: none;
+
     }
 
     .videoContainer2 {
         position: relative;
         width: 20vw;
         height: 0vh;
+        user-select: none;
+
     }
 
     .videoContainer2 video {
         width: 50vw;
         height: 50vh;
+        user-select: none;
+
     }
 
 }
@@ -172,14 +185,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 20vh;
     width: 60vw;
 }
 
 @media (max-width: 768px) {
     .containerButtons {
         margin-top: 5%;
-        height: 50vh;
+        height: 10vh;
         width: 80vw;
     }
 }
@@ -436,20 +448,6 @@ li {
     margin-bottom: 0.5em;
 }
 
-.videoTutorialMastermind {
-    width: 70vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3em;
-}
-
-.videoTutorialMastermind video {
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 @media (max-width: 768px) {
 
