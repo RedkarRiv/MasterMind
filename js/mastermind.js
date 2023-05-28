@@ -9,7 +9,7 @@ let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkBut
 let resultadoArray = [undefined, undefined, undefined, undefined];
 let lvlModeCount = 10;
 
-// DINAMIC BOARD HARD AND MEDIUM
+// DINAMIC BOARD HARD AND MEDIUM (AND A SECRET LVL)
 let lvlMode = sessionStorage.getItem("nivelSeleccionado");
 let mediumModeBlock = document.querySelectorAll('.mediumMODE');
 let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')
@@ -132,19 +132,19 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
         }
 
         if (posicion2 == Code2) {
-            scoreMove[2].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion2)) {
-            scoreMove[2].style.backgroundColor = "white";
-        } else {
-            scoreMove[2].style.backgroundColor = "black";
-        }
-
-        if (posicion3 == Code3) {
             scoreMove[1].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion3)) {
+        } else if (winnerCode.includes(posicion2)) {
             scoreMove[1].style.backgroundColor = "white";
         } else {
             scoreMove[1].style.backgroundColor = "black";
+        }
+
+        if (posicion3 == Code3) {
+            scoreMove[2].style.backgroundColor = "red";
+        } else if (winnerCode.includes(posicion3)) {
+            scoreMove[2].style.backgroundColor = "white";
+        } else {
+            scoreMove[2].style.backgroundColor = "black";
         }
 
         if (posicion4 == Code4) {
