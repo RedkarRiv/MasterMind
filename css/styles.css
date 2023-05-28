@@ -97,15 +97,38 @@ body {
 .videoContainer2 {
     position: relative;
     width: 30vw;
-    height: 30vh;
+    height: 15vh;
 }
 
 .videoContainer2 video {
-    width: 50vw;
-    height: 50vh;
+    width: 30vw;
+    height: 30vh;
 }
 
+#gameName {
+    font-size: 5em;
+    color: #bffd2f;
+    text-shadow: 0.08em 0 black, -0.08em 0 black, 0 0.08em black, 0 -0.08em black,
+        0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
+    font-weight: bold;
+    transition: color 2s ease-in-out;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding-right: 1em;
+    padding-left: 1em;
+}
 
+@media (max-width: 768px) {
+
+    #gameName {
+        font-size: 2.5em;
+        color: #bffd2f;
+        text-shadow: 0.08em 0 black, -0.08em 0 black, 0 0.08em black, 0 -0.08em black,
+            0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
+        font-weight: bold;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        margin-bottom: 1em;
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -127,7 +150,7 @@ body {
     .videoContainer2 {
         position: relative;
         width: 20vw;
-        height: 20vh;
+        height: 0vh;
     }
 
     .videoContainer2 video {
@@ -222,9 +245,7 @@ body {
         text-align: center;
     }
 
-    .textContainer {
-        font-size: 80%;
-    }
+
 }
 
 
@@ -343,6 +364,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #fb9c03
+    }
+
+    .textContainer {
+        font-size: 90%;
     }
 }
 
@@ -866,6 +892,8 @@ li {
     justify-content: center;
     user-select: none;
     margin-bottom: 2vh;
+    margin-top: 2vh;
+
 
 
 }
