@@ -1,9 +1,6 @@
 let gameResult = sessionStorage.getItem("game result");
-console.log(gameResult)
 let jugador = sessionStorage.getItem("usuario");
-console.log(jugador)
 let secretMode = sessionStorage.getItem("secret mode");
-console.log(secretMode)
 
 
 if (gameResult == 0) {

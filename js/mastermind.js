@@ -65,7 +65,6 @@ const arrayRandom = (defaultCode) => {
 }
 
 const secretCode = arrayRandom(arrayCode);
-console.log(secretCode);
 
 // SECRET CODE CONVERTED IN SIMPLE CODE STRING AND WINNER CODE STRING
 
@@ -74,7 +73,6 @@ let Code2 = secretCode[1].toString();
 let Code3 = secretCode[2].toString();
 let Code4 = secretCode[3].toString();
 let winnerCode = Code1 + Code2 + Code3 + Code4;
-console.log(winnerCode)
 // WINNER CODE SHOW
 
 let codeWin1 = document.querySelector("#winCode1");
@@ -96,14 +94,9 @@ const codeWinnerShow = () => {
 // // CHECKING PLAYER MOVE
 const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry) => {
     const scoreMove = puntuacionAct.querySelectorAll(".score");
-    console.log("La posicion 1 es:" + posicion1);
-    console.log("La posicion 2 es:" + posicion2);
-    console.log("La posicion 3 es:" + posicion3);
-    console.log("La posicion 4 es:" + posicion4);
     if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
         return;
     }
-
     if (fullTry === winnerCode) {
         codeWinnerShow();
         sessionStorage.setItem("game result", 1)
@@ -165,11 +158,9 @@ const playerSelcFun = (jugadaActiva) => {
         element.addEventListener("click", (event) => {
             const posicion = currentIndex % arrayCode.length;
             currentIndex--;
-
             if (currentIndex < 0) {
                 currentIndex = arrayCode.length - 1;
             }
-
             element.style.backgroundColor = arrayCode[posicion];
             resultadoArray[index] = arrayCode[posicion];
             posicion1 = resultadoArray[0];
@@ -177,25 +168,16 @@ const playerSelcFun = (jugadaActiva) => {
             posicion3 = resultadoArray[2];
             posicion4 = resultadoArray[3];
             fullTry = resultadoArray.join("");
-            // console.log("El array del codigo es: " + arrayCode)
-            // console.log("El array resultante es: " + resultadoArray);
         });
     });
 }
 const rowsArray = Array.from(document.querySelectorAll('.fila')).reverse();
-console.log(rowsArray);
 let rowsArrayIndex = 0;
 
 const performIteration = () => {
     if (rowsArrayIndex < lvlModeCount) {
         if (fullTry !== winnerCode) {
-
-
             const idIndex = rowsArrayIndex + 1;
-            // console.log("El indice actual es " + rowsArrayIndex);
-            // console.log("El elemento actual es " + element);
-
-            // Asignar clases
             document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
             document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
             document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
@@ -210,14 +192,12 @@ const performIteration = () => {
                 if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
                     return;
                 } else {
-                    // Eliminar clases antes de pasar a la siguiente iteración
                     const idIndex = rowsArrayIndex;
                     document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
                     document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
                     document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
                     document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
 
-                    // Actualizar puntuaciones
                     checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
                     posicion1 = undefined;
                     posicion2 = undefined;
@@ -225,12 +205,10 @@ const performIteration = () => {
                     posicion4 = undefined;
                     resultadoArray = [undefined, undefined, undefined, undefined];
                     arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
-                    // Avanzar a la siguiente iteración
                     performIteration();
                 }
             });
             rowsArrayIndex++;
-            console.log(rowsArrayIndex);
         }
     }
 
@@ -241,9 +219,9 @@ const performIteration = () => {
         sessionStorage.setItem("secret mode", 0);
         setTimeout(() => {
             window.location.href = "./final.html";
-        }, 1000); // Se establece un retraso mínimo de 0 milisegundos
+        }, 500); 
 
         return;
     }
 }
-performIteration(); // Iniciar la primera iteración al cargar el HTML
+performIteration(); 
