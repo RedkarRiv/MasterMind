@@ -112,9 +112,10 @@ body {
         0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
     font-weight: bold;
     transition: color 2s ease-in-out;
-    font-family: "Comic Sans MS", cursive, sans-serif;
     padding-right: 1em;
     padding-left: 1em;
+    font-family: 'Franklin Gothic Medium';
+
 }
 
 @media (max-width: 768px) {
@@ -125,8 +126,8 @@ body {
         text-shadow: 0.08em 0 black, -0.08em 0 black, 0 0.08em black, 0 -0.08em black,
             0.04em 0.04em black, -0.04em -0.04em black, 0.04em -0.04em black, 0.04em 0.04em black;
         font-weight: bold;
-        font-family: "Comic Sans MS", cursive, sans-serif;
         margin-bottom: 1em;
+        font-family: 'Franklin Gothic Medium';
     }
 }
 
