@@ -63,7 +63,7 @@ La web con el juego **🎮Mastermind🎮 - by Redkar Rival** se puede ejecutar e
     - Si quieres volver a empezar la partida, puedes pulsar el boton "Recargar" o actualizar la pagina.
     - Si quieres volver a elegir la dificultad, puedes pulsar en el icono del engranaje en el menu superior.
     
-**EASTER EGG: Si consigues ganar en la dificultad DIFICIL, desbloquearás un nivel secreto. ¿Te atreves a intentarlo?**
+***EASTER EGG: Si consigues ganar en la dificultad DIFICIL, desbloquearás un nivel secreto. ¿Te atreves a intentarlo?***
 
 ### 🟡 Errores conocidos 🟡
 
