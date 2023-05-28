@@ -16,7 +16,8 @@
 
 <body>
     <!--LEVEL BACKGROUND -->
-    <div class="mainPlayerSelect container-fluid p-0">
+    <div class="container-fluid p-0 d-flex flex-column" id="mainBackground">
+
         <div class="barraMenu">
             <a href="../index.html">
                 <div class="elementoMenu"> <img src="../img/house_icon.svg" alt="Home icon" class="svgColor"> </div>
@@ -38,22 +39,25 @@
                 <div class="elementoMenu"> <img src="../img/navigation_back_arrow_left_icon.svg" alt="Back icon"
                         class="svgColor"></div>
             </a>
-
         </div>
-        <div class="logoBackground"></div>
-        <div class="prompLevelSelect">Selecciona la dificultad</div>
-        <a class="inputLink" onclick="levelSave('easy')" href=" ../pages/colorselect.html">
-            <div class="inputLvl">Facil</div>
-        </a>
-        <a class="inputLink" onclick="levelSave('medium')" href=" ../pages/colorselect.html">
-            <div class="inputLvl" onclick="levelSave('medium')">Medio</div>
-        </a>
-        <a class="inputLink" onclick="levelSave('hard')" href=" ../pages/colorselect.html">
-            <div class="inputLvl" onclick="levelSave('hard')">Dificil</div>
-        </a>
+        <div
+            class="mainPlayerSelect p-0 m-0 col-6 col-md-3 col-lg-3 col-xl-10 d-flex flex-column justify-content-start align-items-center">
+            <!-- VIDEO LOOP -->
+            <div
+                class="videoContainer2 d-flex flex-column p-0 m-0 col-10 col-md-6 col-lg-6 col-xl-6 mt-2 justify-content-center align-items-center">
+                <video autoplay loop muted>
+                    <source src="../img/colores_webm.webm" type="video/webm">
+                </video>
+            </div>
+            <div class="prompLevelSelect">Selecciona la dificultad</div>
+            <div onclick="levelSave('easy')" class="inputLvl">Facil</div>
+            <div onclick="levelSave('medium')" class="inputLvl">Medio</div>
+            <div onclick=" levelSave('hard')" class="inputLvl">Dificil</div>
+        </div>
     </div>
     <!-- MAIN SCRIP -->
-    <script src="../js/levelselect.js"></script>
+    <script src=" ../js/levelselect.js">
+    </script>
     <!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

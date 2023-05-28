@@ -10,12 +10,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../css/styles.css">
-
     <title>MasterMind</title>
 </head>
 
 <body>
-    <div class="mainPlayerSelect container-fluid p-0">
+    <div class="container-fluid p-0 d-flex flex-column" id="mainBackground">
         <div class="barraMenu">
             <a href="../index.html">
                 <div class="elementoMenu"> <img src="../img/house_icon.svg" alt="Home icon" class="svgColor"> </div>
@@ -37,12 +36,23 @@
                 <div class="elementoMenu"> <img src="../img/navigation_back_arrow_left_icon.svg" alt="Back icon"
                         class="svgColor"></div>
             </a>
-
         </div>
-        <div class="logoBackground"></div>
-        <div class="prompPlayerSelect">Introduce tu nombre:</div>
-        <input type="text" name="PlayerName" id="inputName" placeholder="NOMBRE">
-        <div id="sendName" onclick="nameSave()">Aceptar</div>
+        <div
+            class="mainPlayerSelect p-0 m-0 col-6 col-md-3 col-lg-3 col-xl-10 d-flex flex-column justify-content-start align-items-center">
+            <!-- VIDEO LOOP -->
+            <div
+                class="videoContainer2 d-flex flex-column p-0 m-0 col-10 col-md-8 col-lg-8 col-xl-8 justify-content-center align-items-center">
+                <video autoplay loop muted>
+                    <source src="../img/colores_webm.webm" type="video/webm">
+                </video>
+            </div>
+            <!-- PROMTP SELECT NAME -->
+            <div class="prompSN d-flex flex-column justify-content-center align-items-center">
+                <div class="prompPlayerSelect">Introduce tu nombre:</div>
+                <input class="m-1" type="text" name="PlayerName" id="inputName" placeholder="NOMBRE">
+                <div id="sendName" onclick="nameSave()">Aceptar</div>
+            </div>
+        </div>
     </div>
     <!-- MAIN SCRIP -->
     <script src="../js/playerselect.js"></script>

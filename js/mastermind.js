@@ -101,13 +101,18 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
         } else {
             sessionStorage.setItem("secret mode", 0);
         }
+        scoreMove[0].style.backgroundColor = "red";
+        scoreMove[1].style.backgroundColor = "red";
+        scoreMove[2].style.backgroundColor = "red";
+        scoreMove[3].style.backgroundColor = "red";
+
         setTimeout(() => {
             alert("YOU WIN!!");
             window.location.href = "./final.html";
         }, 100);
-
         return;
-    } else {
+    }
+    else {
         if (posicion1 == Code1) {
             scoreMove[3].style.backgroundColor = "red";
         } else if (winnerCode.includes(posicion1)) {
@@ -173,54 +178,52 @@ let rowsArrayIndex = 0;
 
 const performIteration = () => {
     if (rowsArrayIndex < lvlModeCount) {
-        const idIndex = rowsArrayIndex + 1;
-        // console.log("El indice actual es " + rowsArrayIndex);
-        // console.log("El elemento actual es " + element);
-
-        // Asignar clases
-        document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
-        document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
-        document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
-        document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
-        let checkButton = document.getElementById(`comprobacion${idIndex}`);
-        puntuacionAct = document.querySelector(".puntuacionActiva")
-        const jugadaActiva = document.querySelector(".tiradaActiva");
-        const jugada = document.querySelectorAll(".tirada");
-        console.log("Esto es el rowsArrayIndex " + rowsArrayIndex)
-        console.log("Esto es la jugada Activa " + jugadaActiva);
-        console.log("Esto es la jugada " + jugada.length)
-        console.log("Esto es el numero de tiradas " + lvlModeCount)
-        playerSelcFun(jugadaActiva);
-
-        checkButton.addEventListener('click', () => {
-            if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
-                return;
-            } else {
-                // Eliminar clases antes de pasar a la siguiente iteración
-                const idIndex = rowsArrayIndex;
-                document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
-                document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
-                document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
-                document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
-
-                // Actualizar puntuaciones
-                checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
-                posicion1 = undefined;
-                posicion2 = undefined;
-                posicion3 = undefined;
-                posicion4 = undefined;
-                resultadoArray = [undefined, undefined, undefined, undefined];
-                arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
-                // Avanzar a la siguiente iteración
-                performIteration();
+        if (fullTry !== winnerCode) {
 
 
+            const idIndex = rowsArrayIndex + 1;
+            // console.log("El indice actual es " + rowsArrayIndex);
+            // console.log("El elemento actual es " + element);
 
-            }
-        });
-        rowsArrayIndex++;
-        console.log(rowsArrayIndex);
+            // Asignar clases
+            document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
+            document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
+            document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
+            document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
+            let checkButton = document.getElementById(`comprobacion${idIndex}`);
+            puntuacionAct = document.querySelector(".puntuacionActiva")
+            const jugadaActiva = document.querySelector(".tiradaActiva");
+
+            playerSelcFun(jugadaActiva);
+
+            checkButton.addEventListener('click', () => {
+                if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
+                    return;
+                } else {
+                    // Eliminar clases antes de pasar a la siguiente iteración
+                    const idIndex = rowsArrayIndex;
+                    document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
+                    document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
+                    document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
+                    document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
+
+                    // Actualizar puntuaciones
+                    checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+                    posicion1 = undefined;
+                    posicion2 = undefined;
+                    posicion3 = undefined;
+                    posicion4 = undefined;
+                    resultadoArray = [undefined, undefined, undefined, undefined];
+                    arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
+                    // Avanzar a la siguiente iteración
+                    performIteration();
+                }
+            });
+            rowsArrayIndex++;
+            console.log(rowsArrayIndex);
+        }
     }
+
     else {
         checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
         codeWinnerShow();
@@ -234,6 +237,5 @@ const performIteration = () => {
         return;
     }
 }
-
 performIteration(); // Iniciar la primera iteración al cargar el HTML
 

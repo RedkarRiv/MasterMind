@@ -35,7 +35,7 @@ const colorPicked = document.querySelector("#pickerColor");
 const selectedColors = document.querySelectorAll(".selectedColor");
 let colorMode;
 let colorCounter = 1;
-
+colorPicked.style.display = "none"
 
 const colorSelections = document.querySelectorAll('.selectedColor');
 
@@ -53,7 +53,7 @@ colorSelections.forEach((colorSelection) => {
 
 selectedColors.forEach((selectedColor) => {
     selectedColor.addEventListener("click", () => {
-        colorPicked.value = "#00000";
+        colorPicked.value = "#000000";
         colorPicked.style.display = "block";
         colorPicked.oninput = () => {
             const colorValue = colorPicked.value;
@@ -71,6 +71,10 @@ const colorSave = (colorValue, colorKey) => {
     console.log(colorMode);
     console.log(dificultMode);
 };
+
+const RedirectUrl = () => {
+    window.location.href = './mastermind.html';
+}
 
 
 

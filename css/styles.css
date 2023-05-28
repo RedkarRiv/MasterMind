@@ -20,7 +20,7 @@
         height: 2.5em;
         border-radius: 2em;
         margin-bottom: 2em;
-        margin-top: 2em;
+        margin-top: 1.5em;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -85,40 +85,72 @@ body {
 
 .videoContainer {
     position: relative;
-    width: 20vw;
-    margin: 1em;
+    width: 60vw;
+    height: 60vh;
 }
 
 .videoContainer video {
-    width: auto;
-    height: 100%;
+    width: 60vw;
+    height: 60vh;
 }
+
+.videoContainer2 {
+    position: relative;
+    width: 30vw;
+    height: 30vh;
+}
+
+.videoContainer2 video {
+    width: 50vw;
+    height: 50vh;
+}
+
+
 
 @media (max-width: 768px) {
 
     .videoContainer {
+        margin-top: 10vh;
         position: relative;
-        width: 60vw;
+        width: 70vw;
+        height: auto;
     }
 }
 
 @media (max-width: 768px) {
 
     .videoContainer video {
-        width: 60vw;
+        width: 70vw;
         height: auto;
     }
+
+    .videoContainer2 {
+        position: relative;
+        width: 20vw;
+        height: 20vh;
+    }
+
+    .videoContainer2 video {
+        width: 50vw;
+        height: 50vh;
+    }
+
 }
 
+.containerIndex {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
 
 
 .containerButtons {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 40vh;
-    width: 80vw;
-    margin-top: 8vh;
+    height: 20vh;
+    width: 60vw;
 }
 
 @media (max-width: 768px) {
@@ -130,21 +162,10 @@ body {
 }
 
 .button {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.textContainer {
-    margin: 0;
-    color: inherit;
-    text-decoration: none;
-}
-
-.textContainer:hover {
-    color: inherit;
-    text-decoration: none;
-    transform: scale(1.5);
 }
 
 
@@ -153,8 +174,8 @@ body {
     background-image: url(../img/woodTexture.jpg);
     background-position: center;
     background-repeat: repeat;
-    height: 15vh;
-    width: 60vw;
+    height: 10vh;
+    width: 50vw;
     border-radius: 20%/50%;
     display: flex;
     align-items: center;
@@ -168,7 +189,6 @@ body {
         0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
     user-select: none;
     text-align: center;
-    margin: 5em;
 }
 
 
@@ -193,7 +213,7 @@ body {
         justify-content: center;
         cursor: pointer;
         box-shadow: 0.3em 0.3em 0.45em rgba(0, 0, 0, 0.5);
-        font-size: 150%;
+        font-size: 100%;
         font-weight: bold;
         color: #84BD00;
         text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
@@ -201,7 +221,12 @@ body {
         user-select: none;
         text-align: center;
     }
+
+    .textContainer {
+        font-size: 80%;
+    }
 }
+
 
 /* CSS PAGE: WINNER */
 #winnerBackground {
@@ -274,6 +299,7 @@ body {
         background-image: url(../img/lose_gif.gif);
         background-position: center;
         background-repeat: no-repeat;
+        background-size: 100%;
     }
 }
 
@@ -576,8 +602,9 @@ li {
 
 
 .botonComprobacion {
-    background-color: rgb(15, 65, 14);
-    color: white;
+    background: rgb(178, 233, 49);
+    color: black;
+    font-weight: bold;
     text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
     box-shadow: 0.2em 0.2em #282828;
     font-size: 50%;
@@ -770,7 +797,7 @@ li {
 
 .mainPlayerSelect {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -778,7 +805,7 @@ li {
     align-items: center;
 }
 
-.logoBackground {
+/* .logoBackground {
     background-image: url(../img/logo_transBack_greenText.png);
     width: 15em;
     height: 10em;
@@ -787,9 +814,9 @@ li {
     background-position: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
-}
+} */
 
-.logoBackgroundSmall {
+/* .logoBackgroundSmall {
     background-image: url(../img/logo_transBack_greenText.png);
     width: 15em;
     height: 10em;
@@ -802,8 +829,8 @@ li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -70%);
-}
-
+} */
+/* 
 @media (max-width: 768px) {
 
     .logoBackgroundSmall {
@@ -821,7 +848,7 @@ li {
         transform: translate(-50%, -70%);
     }
 }
-
+ */
 
 
 
@@ -900,7 +927,6 @@ li {
 
 @media (max-width: 768px) {
     #sendName {
-        margin-top: 3vh;
         width: 20vw;
         height: 5vh;
         background-color: rgb(153, 142, 142);
@@ -909,12 +935,8 @@ li {
         font-weight: bold;
         cursor: pointer;
         user-select: none;
+        margin-top: 3em;
     }
-}
-
-.inputLink {
-    margin-top: 2vh;
-
 }
 
 
@@ -933,7 +955,8 @@ li {
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-
+    font-weight: bold;
+    margin-top: 1vh;
 }
 
 @media (max-width: 768px) {
@@ -969,7 +992,7 @@ a {
     align-items: center;
     justify-content: center;
     user-select: none;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
 
 }
 
@@ -1061,10 +1084,18 @@ a {
     }
 }
 
+@media (max-width: 768px) {
+
+    .colorPickerContainer {
+        width: 50vw;
+        height: 5vh;
+    }
+}
+
 #pickerColor {
     padding: 0;
     margin-top: 2em;
-    width: 5vw;
+    width: 30vw;
     height: 5vh;
     border-radius: 0.8em;
     border: #84BD00 solid 0.20em;
@@ -1074,8 +1105,8 @@ a {
     #pickerColor {
         padding: 0;
         margin-top: 2em;
-        width: 30vw;
-        height: 6vh;
+        width: 50vw;
+        height: 5vh;
         border-radius: 0.8em;
         border: #84BD00 solid 0.20em;
     }
