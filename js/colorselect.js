@@ -70,7 +70,7 @@ const colorSave = (colorValue, colorKey) => {
     sessionStorage.setItem(colorKey, colorValue);
 };
 
-const redirectUrl = () => {
+const colorSelectedRedirect = () => {
     window.location.href = './mastermind.html';
 }
 
