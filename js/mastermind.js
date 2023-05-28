@@ -11,7 +11,7 @@ let lvlModeCount = 10;
 
 // DINAMIC BOARD HARD AND MEDIUM
 let lvlMode = sessionStorage.getItem("nivelSeleccionado");
-let mediumModeBlock = document.querySelectorAll('.mediumMODE')
+let mediumModeBlock = document.querySelectorAll('.mediumMODE');
 let mediumModeTryBlock = document.querySelectorAll('.mediumTRY')
 let hardModeBlock = document.querySelectorAll('.hardMODE')
 let hardModeTryBlock = document.querySelectorAll('.hardTRY')
