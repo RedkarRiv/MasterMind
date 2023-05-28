@@ -68,11 +68,9 @@ selectedColors.forEach((selectedColor) => {
 
 const colorSave = (colorValue, colorKey) => {
     sessionStorage.setItem(colorKey, colorValue);
-    console.log(colorMode);
-    console.log(dificultMode);
 };
 
-const RedirectUrl = () => {
+const redirectUrl = () => {
     window.location.href = './mastermind.html';
 }
 
