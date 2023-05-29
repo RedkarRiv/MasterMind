@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: #cce816
 }
 
 @media (max-width: 768px) {
@@ -337,12 +338,15 @@ body {
     background-image: url(../img/win_gif.gif);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 25%;
+
 }
 
 .finalAnimationLose {
     background-image: url(../img/lose_gif.gif);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 25%;
 
 }
 

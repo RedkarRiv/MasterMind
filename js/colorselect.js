@@ -34,7 +34,7 @@ for (var i = 0; i < dificultMode; i++) {
 const colorPicked = document.querySelector("#pickerColor");
 const selectedColors = document.querySelectorAll(".selectedColor");
 let colorMode;
-let colorCounter = 1;
+let colorCounter = 1;   
 colorPicked.style.display = "none"
 
 const colorSelections = document.querySelectorAll('.selectedColor');
