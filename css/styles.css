@@ -532,14 +532,14 @@ li {
     }
 }
 
-.fila {
+.row {
     /* border: blue solid 0.16em; */
     width: 100%;
     height: 10%;
     display: flex;
 }
 
-.filaCierre {
+.rowClose {
     width: 100%;
     height: 5%;
 }
@@ -555,7 +555,7 @@ li {
 
 
 
-.celdaTry {
+.tryBox {
     height: 100%;
     width: 15%;
     display: flex;
@@ -563,7 +563,7 @@ li {
     align-items: center;
 }
 
-.celdaMargen {
+.marginBox {
     /* border: green solid 0.16em; */
     height: 100%;
     width: 20%;
@@ -573,7 +573,7 @@ li {
     flex-direction: column;
 }
 
-.numeroTirada {
+.tryNumber {
     color: #84BD00;
     text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
         0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
@@ -589,7 +589,7 @@ li {
 
 @media (max-width: 768px) {
 
-    .numeroTirada {
+    .tryNumber {
         color: #84BD00;
         text-shadow: 0.16em 0 black, -0.16em 0 black, 0 0.16em black, 0 -0.16em black,
             0.08em 0.08em black, -0.08em -0.08em black, 0.08em -0.08em black, 0.08em 0.08em black;
@@ -604,12 +604,12 @@ li {
     }
 }
 
-.tiradaNull {
+.tryNull {
     pointer-events: none;
 }
 
 
-.botonComprobacion {
+.checkingButton {
     background: rgb(178, 233, 49);
     color: black;
     font-weight: bold;
@@ -628,7 +628,7 @@ li {
 
 @media (max-width: 768px) {
 
-    .botonComprobacion {
+    .checkingButton {
         background-color: rgb(15, 65, 14);
         color: white;
         text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
@@ -679,7 +679,7 @@ li {
     align-items: center;
 }
 
-.tirada {
+.try {
     border-radius: 50%;
     background: linear-gradient(119deg, rgba(87, 89, 89, 0.106) 0%, rgba(66, 68, 68, 0.308) 18%, rgba(4, 4, 4, 0.571) 100%);
     background-color: rgb(0, 0, 0);
@@ -689,7 +689,7 @@ li {
     border: 0.16em inset grey;
 }
 
-.tryActive {
+/* .tryActive {
     border-radius: 50%;
     background: linear-gradient(119deg, rgba(87, 89, 89, 0.106) 0%, rgba(66, 68, 68, 0.308) 18%, rgba(4, 4, 4, 0.571) 100%);
     background-color: rgb(0, 0, 0);
@@ -697,7 +697,7 @@ li {
     width: 2em;
     cursor: pointer;
     border: 0.16em inset grey;
-}
+} */
 
 @media (max-width: 768px) {
     .tirada1 {
@@ -711,7 +711,7 @@ li {
 }
 
 @media (max-width: 768px) {
-    .tirada {
+    .try {
         border-radius: 50%;
         background-color: black;
         height: 2em;
@@ -732,14 +732,14 @@ li {
     border: 0.16em inset grey;
 }
 
-.SolucionLogo {
+.solutionLogo {
     background-image: url(../img/logo_blackBack_greenText_justHead.png);
     background-size: cover;
     background-position: 50% 0%;
 }
 
 
-.puntuacion {
+.puntuation {
     /* border: white solid 0.16em; */
     height: 60%;
     width: 40%;
@@ -750,7 +750,7 @@ li {
     justify-items: center;
 }
 
-.pto {
+.score {
     border-radius: 50%;
     background-color: black;
     height: 0.8em;
@@ -758,7 +758,7 @@ li {
     border: 0.1em inset grey;
 }
 
-.tiradaActiva {
+.activeTry {
     border: 0.16em solid #84BD00;
     box-shadow: 0.16em 0.16em 0.5em black;
     display: flex;
@@ -770,7 +770,7 @@ li {
 }
 
 
-.tiradaInactiva {
+.inactiveTry {
     display: flex;
     width: 60%;
     justify-content: space-around;

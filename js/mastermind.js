@@ -5,8 +5,8 @@ let D = sessionStorage.getItem("ColorSelected4") ?? "#cce816";
 let E = sessionStorage.getItem("ColorSelected5") ?? "#dc25c1";
 let F = sessionStorage.getItem("ColorSelected6") ?? "#dc6f09";
 
-let puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry, checkButton;
-let resultadoArray = [undefined, undefined, undefined, undefined];
+let scoreAct, position1, position2, position3, position4, fullTry, checkButton;
+let resultArray = [undefined, undefined, undefined, undefined];
 let lvlModeCount = 10;
 
 // DINAMIC BOARD HARD AND MEDIUM (AND A SECRET LVL)
@@ -82,10 +82,10 @@ let codeWin3 = document.querySelector("#winCode3");
 let codeWin4 = document.querySelector("#winCode4");
 
 const codeWinnerShow = () => {
-    codeWin1.classList.remove("SolucionLogo");
-    codeWin2.classList.remove("SolucionLogo");
-    codeWin3.classList.remove("SolucionLogo");
-    codeWin4.classList.remove("SolucionLogo");
+    codeWin1.classList.remove("solutionLogo");
+    codeWin2.classList.remove("solutionLogo");
+    codeWin3.classList.remove("solutionLogo");
+    codeWin4.classList.remove("solutionLogo");
     codeWin1.style.backgroundColor = Code1;
     codeWin2.style.backgroundColor = Code2;
     codeWin3.style.backgroundColor = Code3;
@@ -93,57 +93,58 @@ const codeWinnerShow = () => {
 }
 
 // // CHECKING PLAYER MOVE
-const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry) => {
-    const scoreMove = puntuacionAct.querySelectorAll(".score");
-    if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
+const checkingPlayerMove = (scoreAct, position1, position2, position3, position4, fullTry) => {
+    const scoreMove = scoreAct.querySelectorAll(".score");
+    if (!position1 || !position2 || !position3 || !position4) {
         return;
     }
     if (fullTry === winnerCode) {
         codeWinnerShow();
         sessionStorage.setItem("game result", 1)
-        if (lvlMode == "hard") {
-            sessionStorage.setItem("secret mode", 1);
-        } else {
-            sessionStorage.setItem("secret mode", 0);
-        }
+            if (lvlMode == "hard") {
+                sessionStorage.setItem("secret mode", 1);
+            } else {
+                sessionStorage.setItem("secret mode", 0);
+            }
         scoreMove[0].style.backgroundColor = "red";
         scoreMove[1].style.backgroundColor = "red";
         scoreMove[2].style.backgroundColor = "red";
         scoreMove[3].style.backgroundColor = "red";
 
         setTimeout(() => {
+
             window.location.href = "./final.html";
         }, 500);
         return;
     }
     else {
-        if (posicion1 == Code1) {
+        if (position1 == Code1) {
             scoreMove[3].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion1)) {
+        } else if (winnerCode.includes(position1)) {
             scoreMove[3].style.backgroundColor = "white";
         } else {
             scoreMove[3].style.backgroundColor = "black";
         }
 
-        if (posicion2 == Code2) {
+        if (position2 == Code2) {
             scoreMove[1].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion2)) {
+        } else if (winnerCode.includes(position2)) {
             scoreMove[1].style.backgroundColor = "white";
         } else {
             scoreMove[1].style.backgroundColor = "black";
         }
 
-        if (posicion3 == Code3) {
+        if (position3 == Code3) {
             scoreMove[2].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion3)) {
+        } else if (winnerCode.includes(position3)) {
             scoreMove[2].style.backgroundColor = "white";
         } else {
             scoreMove[2].style.backgroundColor = "black";
         }
 
-        if (posicion4 == Code4) {
+        if (position4 == Code4) {
             scoreMove[0].style.backgroundColor = "red";
-        } else if (winnerCode.includes(posicion4)) {
+        } else if (winnerCode.includes(position4)) {
             scoreMove[0].style.backgroundColor = "white";
         } else {
             scoreMove[0].style.backgroundColor = "black";
@@ -152,59 +153,59 @@ const checkingPlayerMove = (puntuacionAct, posicion1, posicion2, posicion3, posi
 };
 
 // PLAYER SELECTOR
-const playerSelcFun = (jugadaActiva) => {
-    const jugada = jugadaActiva.querySelectorAll(".tirada");
-    jugada.forEach((element, index = 0) => {
+const playerSelcFun = (tryActive) => {
+    const playerSelectorActive = tryActive.querySelectorAll(".try");
+    playerSelectorActive.forEach((element, index = 0) => {
         let currentIndex = 0;
         element.addEventListener("click", (event) => {
-            const posicion = currentIndex % arrayCode.length;
+            const position = currentIndex % arrayCode.length;
             currentIndex--;
             if (currentIndex < 0) {
                 currentIndex = arrayCode.length - 1;
             }
-            element.style.backgroundColor = arrayCode[posicion];
-            resultadoArray[index] = arrayCode[posicion];
-            posicion1 = resultadoArray[0];
-            posicion2 = resultadoArray[1];
-            posicion3 = resultadoArray[2];
-            posicion4 = resultadoArray[3];
-            fullTry = resultadoArray.join("");
+            element.style.backgroundColor = arrayCode[position];
+            resultArray[index] = arrayCode[position];
+            position1 = resultArray[0];
+            position2 = resultArray[1];
+            position3 = resultArray[2];
+            position4 = resultArray[3];
+            fullTry = resultArray.join("");
         });
     });
 }
-const rowsArray = Array.from(document.querySelectorAll('.fila')).reverse();
+const rowsArray = Array.from(document.querySelectorAll('.row')).reverse();
 let rowsArrayIndex = 0;
 
 const performIteration = () => {
     if (rowsArrayIndex < lvlModeCount) {
         if (fullTry !== winnerCode) {
             const idIndex = rowsArrayIndex + 1;
-            document.getElementById(`fila${idIndex}`).classList.remove("tiradaNull");
-            document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaInactiva");
-            document.getElementById(`tiradas${idIndex}`).classList.add("tiradaActiva");
-            document.getElementById(`puntuacion${idIndex}`).classList.add("puntuacionActiva");
-            let checkButton = document.getElementById(`comprobacion${idIndex}`);
-            puntuacionAct = document.querySelector(".puntuacionActiva")
-            const jugadaActiva = document.querySelector(".tiradaActiva");
+            document.getElementById(`row${idIndex}`).classList.remove("tryNull");
+            document.getElementById(`tries${idIndex}`).classList.remove("inactiveTry");
+            document.getElementById(`tries${idIndex}`).classList.add("activeTry");
+            document.getElementById(`puntuation${idIndex}`).classList.add("scoreActive");
+            let checkButton = document.getElementById(`comprobation${idIndex}`);
+            scoreAct = document.querySelector(".scoreActive")
+            const tryActive = document.querySelector(".activeTry");
 
-            playerSelcFun(jugadaActiva);
+            playerSelcFun(tryActive);
 
             checkButton.addEventListener('click', () => {
-                if (!posicion1 || !posicion2 || !posicion3 || !posicion4) {
+                if (!position1 || !position2 || !position3 || !position4) {
                     return;
                 } else {
                     const idIndex = rowsArrayIndex;
-                    document.getElementById(`fila${idIndex}`).classList.add("tiradaNull");
-                    document.getElementById(`tiradas${idIndex}`).classList.add("tiradaInactiva");
-                    document.getElementById(`tiradas${idIndex}`).classList.remove("tiradaActiva");
-                    document.getElementById(`puntuacion${idIndex}`).classList.remove("puntuacionActiva");
+                    document.getElementById(`row${idIndex}`).classList.add("tryNull");
+                    document.getElementById(`tries${idIndex}`).classList.add("inactiveTry");
+                    document.getElementById(`tries${idIndex}`).classList.remove("activeTry");
+                    document.getElementById(`puntuation${idIndex}`).classList.remove("scoreActive");
 
-                    checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
-                    posicion1 = undefined;
-                    posicion2 = undefined;
-                    posicion3 = undefined;
-                    posicion4 = undefined;
-                    resultadoArray = [undefined, undefined, undefined, undefined];
+                    checkingPlayerMove(scoreAct, position1, position2, position3, position4, fullTry);
+                    position1 = undefined;
+                    position2 = undefined;
+                    position3 = undefined;
+                    position4 = undefined;
+                    resultArray = [undefined, undefined, undefined, undefined];
                     arrayCode = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];
                     performIteration();
                 }
@@ -214,7 +215,7 @@ const performIteration = () => {
     }
 
     else {
-        checkingPlayerMove(puntuacionAct, posicion1, posicion2, posicion3, posicion4, fullTry);
+        checkingPlayerMove(scoreAct, position1, position2, position3, position4, fullTry);
         codeWinnerShow();
         sessionStorage.setItem("game result", 0);
         sessionStorage.setItem("secret mode", 0);
