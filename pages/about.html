@@ -44,21 +44,16 @@
                         class="svgColor"></div>
             </a>
         </div>
-        <div class="logoBackground"></div>
+        <!-- VIDEO LOOP -->
+            <div
+            class="videoContainer2 d-flex flex-column p-0 m-0 col-8 col-md-4 col-lg-4 col-xl-4 justify-content-center align-items-center mt-2">
+            <video autoplay loop muted>
+                <source src="../img/colores_webm.webm" type="video/webm">
+            </video>
+            </div>        
         <!-- DESCRIPTION ABOUT -->
-        <div class="aboutTextContainer d-flex flex-column align-items-start justify-content-center p-1">
-            <div class="aboutTitle">CÓMO SE JUEGA A MASTERMIND</div>
-            <!-- INDEX RULES -->
-            <div id="menuRules" class="m-3">
-                <ol>
-                    <li><a href="#introduccion">Introducción</a></li>
-                    <li><a href="#reglas">Reglas del juego</a></li>
-                    <li><a href="#modos">Modos de juego</a></li>
-                    <li><a href="#final">Final de partida</a></li>
-                    <li><a href="#ejemplo">Ejemplo de partida</a></li>
-                    <li><a href="#estrategias">Estrategias de juego</a></li>
-                </ol>
-            </div>
+        <div class="aboutTextContainer d-flex flex-column align-items-start justify-content-center">
+            <div id="aboutTitle">REGLAS - MASTERMIND</div>
             <div id="Rules" class="m-2">
                 <h2 class="titleRules" id="introduccion">Introducción</h2>
                 <p>El juego MasterMind fue creado por Mordecai Meirowitz en 1970. Fue diseñado como una versión
@@ -69,14 +64,14 @@
                     pensamiento estratégico y la toma de decisiones basada en las pistas proporcionadas.</p>
                 <h2 class="titleRules" id="reglas">Reglas del juego</h2>
                 <ol>
-                    <li>El juego consiste en adivinar un código secreto creado por la CPU (computadora).</li>
-                    <li>El código secreto está compuesto por una combinación de colores.</li>
-                    <li>Los colores disponibles para crear el código pueden variar según el modo de juego.</li>
-                    <li>Cada intento para adivinar el código se denomina "tirada".</li>
-                    <li>Después de cada tirada, se proporcionarán pistas sobre la exactitud de los colores en el
+                    <li>El juego consiste en adivinar un código secreto generado por el ordenador.</li>
+                    <li>El código secreto seran 4 bolas y está compuesto por una combinación de colores.</li>
+                    <li>Los colores disponibles los eligira el usuario o se aplicaran por defecto si no selecciona alguno de ellos.</li>
+                    <li>Cada intento para adivinar el código se denomina "turno".</li>
+                    <li>Despues de cada turno, se proporcionarán pistas sobre la exactitud de los colores en el
                         código secreto.</li>
                     <li>Las pistas indicarán si un color se encuentra en el código secreto y si está en la
-                        posición correcta.</li>
+                        posición correcta: Si el color y la posicion coincide se marcará una ficha roja, si no coincide la posicion pero el color si que se encuentra en el codigo secreto, se marcará una ficha blanca.</li>
                     <li>El objetivo es adivinar el código secreto en el menor número de intentos posibles.</li>
                 </ol>
                 <h2 class="titleRules" id="modos">Modos de juego</h2>
@@ -100,11 +95,11 @@
                 <p>Supongamos que en el modo fácil se seleccionan los siguientes colores para el código secreto:
                     Rojo, Verde, Amarillo y Azul. Y el jugador realiza las siguientes tiradas:</p>
                 <ul>
-                    <li>Tirada 1: Se elige Rojo, Verde, Verde, Amarillo. Las pistas indican que hay 3 colores
+                    <li>Turno 1: Se elige Rojo, Verde, Verde, Amarillo. Las pistas indican que hay 3 colores
                         correctos, pero solo 1 está en la posición correcta.</li>
-                    <li>Tirada 2: Se elige Rojo, Amarillo, Verde, Azul. Las pistas indican que hay 4 colores
+                    <li>Turno 2: Se elige Rojo, Amarillo, Verde, Azul. Las pistas indican que hay 4 colores
                         correctos, pero solo 2 están en la posición correcta.</li>
-                    <li>Tirada 3: Se elige Rojo, Amarillo, Verde, Verde. Las pistas indican que hay 4 colores
+                    <li>Turno 3: Se elige Rojo, Amarillo, Verde, Verde. Las pistas indican que hay 4 colores
                         correctos y todos están en la posición correcta. El jugador adivina el código y gana la
                         partida.</li>
                 </ul>
@@ -117,6 +112,8 @@
                     <li><strong>Estrategia de patrones:</strong> Analiza las pistas de las tiradas anteriores
                         para identificar patrones y tendencias en el código secreto. Recomendada para el modo
                         Medio y Difícil.</li>
+                    <li><strong>Estrategia de repeticion:</strong> Analiza un color en cada tirada para detectar su ubicacion y/o existencia en el codigo secreto. Muy util cuando el codigo contiene colores repetidos. Recomendada para el modo
+                        Medio y Difícil.</li>
                     <li><strong>Estrategia de adivinanza aleatoria:</strong> Realiza combinaciones aleatorias en
                         cada tirada sin basarse en las pistas anteriores. No recomendada, ya que no utiliza la
                         información proporcionada por las pistas.</li>
@@ -126,6 +123,9 @@
             </div>
         </div>
     </div>
+    <!-- MAIN SCRIPT -->
+    <script src="../js/about.js"></script>
+
     <!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
