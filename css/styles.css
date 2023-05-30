@@ -1,6 +1,6 @@
 /* NAVBAR BETA */
 
-.barraMenu {
+.menuBar {
     background: linear-gradient(163deg, rgba(178, 255, 0, 1) 0%, rgba(132, 189, 0, 1) 21%, rgba(132, 189, 0, 0.9192051820728291) 35%, rgba(178, 255, 0, 0.8435749299719888) 47%, rgba(132, 189, 0, 0.9248074229691877) 65%, rgba(132, 189, 0, 0.804359243697479) 78%, rgba(178, 255, 0, 1) 100%);
     width: 20em;
     height: 3em;
@@ -15,7 +15,7 @@
 
 @media (max-width: 768px) {
 
-    .barraMenu {
+    .menuBar {
         background: linear-gradient(163deg, rgba(178, 255, 0, 1) 0%, rgba(132, 189, 0, 1) 21%, rgba(132, 189, 0, 0.9192051820728291) 35%, rgba(178, 255, 0, 0.8435749299719888) 47%, rgba(132, 189, 0, 0.9248074229691877) 65%, rgba(132, 189, 0, 0.804359243697479) 78%, rgba(178, 255, 0, 1) 100%);
         width: 80vw;
         height: 2.5em;
@@ -276,6 +276,21 @@ body {
     height: 50vh;
     width: 60vw;
 }
+.finalAnimationWin {
+    background-image: url(../img/win_gif.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25%;
+
+}
+
+.finalAnimationLose {
+    background-image: url(../img/lose_gif.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25%;
+
+}
 
 @media (max-width: 768px) {
 
@@ -295,26 +310,12 @@ body {
         background-image: url(../img/lose_gif.gif);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 75%;
     }
 }
 
 
-.finalAnimationWin {
-    background-image: url(../img/win_gif.gif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25%;
 
-}
-
-.finalAnimationLose {
-    background-image: url(../img/lose_gif.gif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25%;
-
-}
 
 /* CSS PAGE: ABOUT */
 
@@ -635,7 +636,7 @@ li {
         text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
         box-shadow: 0.2em 0.2em #282828;
         font-size: 40%;
-        width: 60%;
+        width: 70%;
         height: 35%;
         border-radius: 1em;
         display: flex;

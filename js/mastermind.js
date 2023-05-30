@@ -74,6 +74,7 @@ let Code2 = secretCode[1].toString();
 let Code3 = secretCode[2].toString();
 let Code4 = secretCode[3].toString();
 let winnerCode = Code1 + Code2 + Code3 + Code4;
+
 // WINNER CODE SHOW
 
 let codeWin1 = document.querySelector("#winCode1");
@@ -100,7 +101,7 @@ const checkingPlayerMove = (scoreAct, position1, position2, position3, position4
     }
     if (fullTry === winnerCode) {
         codeWinnerShow();
-        sessionStorage.setItem("game result", 1)
+        sessionStorage.setItem("game result", 1);
             if (lvlMode == "hard") {
                 sessionStorage.setItem("secret mode", 1);
             } else {
@@ -187,9 +188,7 @@ const performIteration = () => {
             let checkButton = document.getElementById(`comprobation${idIndex}`);
             scoreAct = document.querySelector(".scoreActive")
             const tryActive = document.querySelector(".activeTry");
-
             playerSelcFun(tryActive);
-
             checkButton.addEventListener('click', () => {
                 if (!position1 || !position2 || !position3 || !position4) {
                     return;
@@ -199,7 +198,6 @@ const performIteration = () => {
                     document.getElementById(`tries${idIndex}`).classList.add("inactiveTry");
                     document.getElementById(`tries${idIndex}`).classList.remove("activeTry");
                     document.getElementById(`puntuation${idIndex}`).classList.remove("scoreActive");
-
                     checkingPlayerMove(scoreAct, position1, position2, position3, position4, fullTry);
                     position1 = undefined;
                     position2 = undefined;
