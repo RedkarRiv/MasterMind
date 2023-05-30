@@ -33,7 +33,7 @@
     filter: invert(57%) sepia(71%) saturate(796%) hue-rotate(37deg) brightness(97%) contrast(101%);
 }
 
-.elementoMenu {
+.elementMenu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 
-.elementoMenu:hover {
+.elementMenu:hover {
     transform: scale(1.3);
 }
 
@@ -77,21 +77,6 @@ body {
         display: flex;
         justify-content: flex-start;
     }
-}
-
-.videoContainer {
-    position: relative;
-    width: 60vw;
-    height: 60vh;
-    user-select: none;
-
-}
-
-.videoContainer video {
-    width: 60vw;
-    height: 60vh;
-    user-select: none;
-
 }
 
 .videoContainer2 {
@@ -133,25 +118,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
-    .videoContainer {
-        margin-top: 10vh;
-        position: relative;
-        width: 70vw;
-        height: auto;
-        user-select: none;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .videoContainer video {
-        width: 70vw;
-        height: auto;
-        user-select: none;
-
-    }
-
     .videoContainer2 {
         position: relative;
         width: 20vw;
