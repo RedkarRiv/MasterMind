@@ -104,6 +104,8 @@ const checkingPlayerMove = (scoreAct, position1, position2, position3, position4
         sessionStorage.setItem("game result", 1);
             if (lvlMode == "hard") {
                 sessionStorage.setItem("secret mode", 1);
+                sessionStorage.setItem("game result", 1);
+
             } else {
                 sessionStorage.setItem("secret mode", 0);
             }
