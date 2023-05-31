@@ -180,7 +180,7 @@ const rowsArray = Array.from(document.querySelectorAll('.row')).reverse();
 let rowsArrayIndex = 0;
 
 const performIteration = () => {
-    if (rowsArrayIndex < lvlModeCount) {
+    if (rowsArrayIndex <=    lvlModeCount) {
         if (fullTry !== winnerCode) {
             const idIndex = rowsArrayIndex + 1;
             document.getElementById(`row${idIndex}`).classList.remove("tryNull");
