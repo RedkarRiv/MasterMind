@@ -65,7 +65,6 @@ const arrayRandom = (defaultCode) => {
 }
 
 const secretCode = arrayRandom(arrayCode);
-console.log(secretCode);
 
 // SECRET CODE CONVERTED IN SIMPLE CODE STRING AND WINNER CODE STRING
 
